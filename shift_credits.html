@@ -1,0 +1,859 @@
+<html>
+<head>
+<title>Mike Sherman's Bicycle Gear Calculator - Info</title>
+<LINK REL="stylesheet" HREF="mike_shift.css" TYPE="text/css">
+<!-- See shift.js for revision information -->
+</head>
+<p>
+<center>
+<a name="TOP"><h3>Gear Calculator v5.0</h3></a>
+<p>
+<INPUT TYPE="button" VALUE=" <-- Back to the Calculator " onClick="location.href='shift.html'">
+<p>
+Please send comments, suggestions, and bug reports to:<br>
+Mike Sherman at 
+<a href="mailto:wheelwrightmike@gmail.com">wheelwrightmike@gmail.com</a>
+<p>
+<INPUT TYPE="button" VALUE=" Help " onClick="location.href='#HELP'">
+&nbsp;
+<INPUT TYPE="button" VALUE=" Credits " onClick="location.href='#CRED'">
+&nbsp;
+<INPUT TYPE="button" VALUE=" Open SHIFT with your parameters " onClick="location.href='#CALL'">
+&nbsp;
+<INPUT TYPE="button" VALUE=" SHIFT revision history " onClick="location.href='#REV'">
+&nbsp;
+<INPUT TYPE="button" VALUE=" Source " onClick="location.href='#SRC'">
+
+</center>
+<p>
+<hr>
+<p>
+<center>
+<a name="HELP"><h3>Help</h3></a>
+</center>
+<a href="#TOP">Top</a><br>
+<a href="shift-tab.html">Calculator</a>
+<br>
+<center>
+My hope is that the program is pretty self-explainatory, but here are a few notes on what everything is:
+<p>
+<table border=0 width=80%>
+	<tr>
+		<td><font size="+1">Input Panel</font>
+		</td>
+		<td>&nbsp;
+		</td>
+		<td>&nbsp;
+		</td>
+	</tr>
+	<tr>
+		</td>
+		<td>&nbsp;
+		<td><b>Cassette Tab</b>
+		</td>
+		<td>Select the Rear sprockets, either from a preset on the pull-down menu, or by editing the 
+			individual sprockets with +/- buttons.<br>
+			The X button removes the sprocket.
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Rings Tab</b>
+		</td>
+		<td>Select the Chainrings by editing the individual sprockets with +/- buttons.<br>
+			The X button removes the sprocket.
+			<hr>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Wheel Tab</b>
+		</td>
+		<td>Select a wheel and tire size from the pull down menu.
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Crank Tab</b>
+		</td>
+		<td>Select a crank arm length from the pull down menu.<br>
+			This value is only used for 
+			Sheldon Brown's <a href="http://sheldonbrown.com/gain">Gain Ratio</a> Table.
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Save Tab</b>
+		</td>
+		<td>This is intended to help you compair two gearing configurations.<br>
+		The Save button saves the current selections to a cookie on your system.<br>
+		The Recall button will recall the saved selections. It does not save the current selections first.<br>
+		The Swap button swaps the current selections with the last saved selections.  The current selections are saved.
+		The Bookmark button creates a bookmark for the current gear selection.
+		The Sort radio buttons cantrol the order of the displayed.
+		The Enable Highlighting Checkbox enables highlighting the gears effected by the controls under the mouse.
+		<hr>
+		</td>
+	</tr>
+
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Cassette & Rings Tab</b>
+		</td>
+		<td>This combines an 11 speed cassette selection and the chain ring selection to allow quicker editing.<br>
+		<hr>
+		</td>
+	</tr>
+
+	<tr>
+		<td><font size="+1">Output Panel</font>
+		</td>
+		<td>&nbsp;
+		</td>
+		<td>&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Speed Tab</b>
+		</td>
+		<td>Displays the Speed over RPM Range. You can set the upper and lower limits of your cadance.
+		<hr>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Semi-Log Tab</b>
+		</td>
+		<td>Displays a Semi-Log Graph or the gears.<br>
+			This is my personal favorite.<br>
+			The log graph can give you a pretty good idea of what a set of gears will feel like.  
+			Evenly spaced gears on 
+			this graph will feel evenly spaced to your legs.
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		</td>
+		<td>&nbsp;
+		<td><b>Inchs Tab</b>
+		</td>
+		<td>Displays a Gear Inch Chart - This is the traditional Gear Inch Chart.<br>
+			The values are the equivalent diameter of a direct drive wheel.<br>
+			Sheldon Brown has a good description on his 
+			<a href="http://www.sheldonbrown.com/gloss_g.html#gearinch"Glossary</a>
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Gain Tab</b><br>
+		</td>
+		<td>
+			Displays a <b><a href="http://sheldonbrown.com/gain">Gain Ratio</a> Table</b>.
+			The <a href="http://sheldonbrown.com/gain">Link</a> explains it better than I can.
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Rollout Table</b>
+		</td>
+		<td>Displays a Rollout Table<br>
+			This table show how far the bike moves with each revolution of the pedals.<br>
+			It is usually expressed in meters.  I provide English or Metric units.<br>
+			This measurement is also know as 
+			<a href="http://www.sheldonbrown.com/gloss_da-o.html#development">development</a>
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Speed table</b>
+		</td>
+		<td>Shows you speed at the selected crank RPM.
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>All-in-One tab</b>
+		</td>
+		<td>This combines the Speed Range, Log Chart, Gear Inch, Rollout, and Gain Ratio displays in one tab for thise 
+			that like to see everything at once.
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>ASCII</b>
+		</td>
+		<td>This combines the Gear Inch, Rollout, Speed, and Gain Ratio displays in one tab in ASCII form for those that 
+			like to copy plain test from the program for use elsewhere.
+			<hr>
+		</td>
+	</tr>
+
+
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Bookmark</b>
+		</td>
+		<td>I thought it would be great to be able be able to bookmark a complete set of gears.  Unfortuneatly, 
+			some browsers don't allow you to make a bookmark from javascript.  I can see why they did that.<br>
+			On some browsers, the bookmark button will re-load the page with all of the settings imbeded in the URL and puts up a
+			pop-up to tell you what it did.  You can then bookmark the page the normal way to save a gear set.
+			<BR>
+			Bookmarking has largely been disabled by current web browsers.
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td><b>Highlighting</b>
+		</td>
+		<td>While the mouse is any of the cog change buttons, the element changing it will effect is highlighted on
+			the gear table, the log graph, and the speed graph.<br>
+			It does force more redrawing of the effected tables<br>
+			A checkbox at the bottom enables this.
+			<hr>
+		</td>
+	</tr>
+</table>
+<p>
+<table border=0 width=80%>
+	<tr>
+		<td><font size="+1">Notes about Gearing</font>
+		</td>
+		<td>
+			<hr>
+			There are lots of ways to look at bicycle gearing.  There are many people with strong opinions about
+			how bicycle gearing should be set up.  I have my own opinions.  I have tried not to allow them to 
+			influence the calculator too much, but some has crept in.  A user pointed this out to me with the way
+			the sorting works on the speed range graph.<br><br>
+			I suggest you look at Sheldon Brown's article <a href="http://www.sheldonbrown.com/gear-theory.html">Gear 
+			Theory for Bicyclists</a> (edited by <a href="http://john-s-allen.com/">John Allen</a>).<br><br>
+			If you're interested in <a href="http://www.sheldonbrown.com/gear-theory.html#halfstep">half-step</a>
+			gearing you might want to look at 
+			<a href="http://www.appleblock.com/web-tools-half-step-chrome.php">Appleblock web tools</a> half-step
+			gearing designer.
+			<hr>
+		</td>
+	</tr>
+</table>
+
+</center>
+<p>
+<hr>
+<center>
+<a name="CRED"><h3>Credits</h3></a>
+</center>
+<a href="#TOP">Top</a><br>
+<a href="shift.html">Calculator</a>
+<br>
+<center>
+<table border=0 width=80%>
+<tr><td>
+This program began it's life for me as a fortran program I wrote in about 1975.
+<hr>
+It has evolved and morphed over the years to Basic, C, perl/cgi, and this Javascript version.
+<hr>
+Major influences over the years have been a BASIC program written in 1978 by my friend Richard Curtiss of Seattle, 
+<br> 
+and a C program posted on 17 Aug 1994 23:21:36 GMT on rec.bicycles.tech by 
+speed@etecnw.com (Paul W. Laudon x7241 (sun)).
+<hr>
+The program is now a client side javascript program.  It was developed in 2004 because I lost my access to a 
+server to run the perl/cgi program.
+<br>
+That loss turned out to be a good thing.  This javascript version has evolved quite a bit with the addition of 
+real graphics.
+<hr>
+Thanks to JimG for the derailleur capacity code.
+<hr>
+Thanks to <a href="http://en.wikipedia.org/wiki/Sheldon_Brown_%28bicycle_mechanic%29">Sheldon Brown</a> 
+for wheel diameter data and his 
+<a href="http://sheldonbrown.com/gain">gain ratio</a> display method.
+<hr>
+Thanks to <a href="http://www.walterzorn.com/index.htm">www.walterzorn.com</a> for
+the <a href="http://www.walterzorn.com/jsgraphics/jsgraphics_e.htm">DHTML JavaScript 
+VectorGraphics Library</a>
+(seems to have been hijacked <a href="http://en.wikipedia.org/wiki/Sheldon_Brown_%28bicycle_mechanic%29">link
+farm</a>)
+<hr>
+Thanks to <a href="http://webfx.eae.net/contact.html#erik">Erik Arvidsson</a> for Tab Pane 
+created for (<a href="http://webfx.eae.net/">WebFX</a>)
+<hr>
+And thanks very much to the many users who have made suggestions and reported bugs.
+</td></tr>
+</table>
+</center>
+<p>
+<p>
+<p>
+<hr>
+<p>
+<p>
+<p>
+<center>
+<a name="CALL"><h3>Calling the calculator with a set configuration</h3></a>
+</center>
+<a href="#TOP">Top</a><br>
+<a href="shift.html">Calculator</a>
+<br>
+<center>
+<table border=0 width=80%>
+<tr><td>
+The major new feature of v4.2 is the ability to call the page with a gear configuration 
+in the URL.  This, combined with a bookmark button will allow the user to bookmark the 
+page with all the parameters they had selected and recall the complete selection later.
+<br>
+It will also allow other web pages to open the calculator with a specific configuration.
+<hr>
+</td></tr>
+<tr><td>
+<b>Programming notes</b>
+<br>
+Append the parameters to the url by adding a question mark (<font color=red>?</font>) followed by the program parameters you want in the format NAME=VALUE.
+<br>
+&nbsp;&nbsp;&nbsp;NAME=VALUE pairs must be separated by a "<font color=red>&</font>" character.
+<br>
+&nbsp;&nbsp;&nbsp;Only the sprockets listed in the URL will be displayed
+<br>
+&nbsp;&nbsp;&nbsp;Any values, other than sprockets, not included in the URL will be set to the default values.
+<br>
+&nbsp;&nbsp;&nbsp;Any spaces in the TITLE should be replaced with <font color=red>%20</font>.
+</td></tr>
+</table>
+Example:
+<p>
+<code>
+http://home.earthlink.net/~mike.sherman/shift.html<font color=red>?</font>R0=30<font color=red>&</font>R1=40<font color=red>&</font>R2=50<font color=red>&</font>C0=13<font color=red>&</font>C1=15<font color=red>&</font>C2=18<font color=red>&</font>C3=21<font color=red>&</font>C4=25<font color=red>&</font>C5=30<font color=red>&</font>CR=180<font color=red>&</font>TITLE=Loaded<font color=red>%20</font>from<font color=red>%20</font>URL
+</code>
+
+</center>
+<p>
+<center>
+<table border=0>
+	<tr>
+		<td><b>Argument NAME</b><hr></td>
+		<td><b>Description</b><hr></td>
+		<td><b>Value</b><hr></td>
+	</tr>
+	<tr>
+		<td>"R0"<hr></td>
+		<td>Smallest or Single Chainring<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"R1"<hr></td>
+		<td>Middle or Largest Chainring<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"R2"<hr></td>
+		<td>Largest Chaingring (if there are 3)<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"C0"<hr></td>
+		<td>Smallest Cassette or Freewheel Cog<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"C1"<hr></td>
+		<td>Second Smallest Cog<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"C2" - "C11"<hr></td>
+		<td>Freewheel or Cassette Cogs<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"C12"<hr></td>
+		<td>Largest Cassette Cog on an 13 speed<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"CAS"<hr></td>
+		<td>Index of selected Cassette<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"WI"<br>&nbsp;<hr></td>
+		<td>Wheel Index<br>
+			sorry, this is messy<hr></td>
+		<td>integer<br>&nbsp;<hr></td>
+	</tr>
+	<tr>
+		<td>"CR"<hr></td>
+		<td>Crank Arm Length in mm<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"RT"<br>&nbsp;<hr></td>
+		<td>Rollout Display type<br>
+			0 = Meters, 1 = inches ????<hr></td>
+		<td>integer<br>&nbsp;<hr></td>
+	</tr>
+	<tr>
+		<td>"ST"<hr></td>
+		<td>Speed Display type (0/1)<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"RPM"<hr></td>
+		<td>RPM for "Speed at" table<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"SRT"<hr></td>
+		<td>Units for "Speed at" table<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"lRPM"<hr></td>
+		<td>Low RPM for Speed over RPM range display<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"hRMP"<hr></td>
+		<td>High RPM for Speed over RPM range display<hr></td>
+		<td>integer<hr></td>
+	</tr>
+	<tr>
+		<td>"G"<br>&nbsp;<hr></td>
+		<td>Grid on/off for Speed over RPM range display<br>("show"/"hide")<hr></td>
+		<td>string<br>&nbsp;<hr></td>
+	</tr>
+	<tr>
+		<td>"S"<br>&nbsp;<hr></td>
+		<td>Sort on/off for Speed over RPM range display <br>("yes"/"no")<hr></td>
+		<td>string<br>&nbsp;<hr></td>
+	</tr>
+	<tr>
+		<td>"HL"<br>&nbsp;<hr></td>
+		<td>Enable mouseover highlighting<br>
+			1=ON / 0=OFF<hr></td>
+		<td>integer<br>&nbsp;<hr></td>
+	</tr>
+	<tr>
+		<td>"TITLE"<br>&nbsp;<hr></td>
+		<td>Page Title<br>
+			Spaces must be replaced with "%20"<hr></td>
+		<td>string<br>&nbsp;<hr></td>
+	</tr>
+ </table>
+ </center>
+<p>
+<hr>
+<center>
+<a name="REV"><h3>revision history</h3></a>
+</center>
+<a href="#TOP">Top</a><br>
+<a href="shift.html">Calculator</a>
+<br>
+<center>
+<table border=0 width=80%>
+	<tr>
+		<td>08/04/2004</td>
+		<td>created
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td>08/11/2004
+		<td>Added Cookies with save/recall/swap<br>
+			Fixed direct data entry bug with < max # cogs or rings
+		</td>
+
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;<br>Version 2.0</font>
+		</td>
+	</tr>
+	<tr>
+		<td>07/13/2005 - 03/08/2007</td>
+		<td>Derailleur capacity added by Jim G<br>
+			Added 650B wheel sizes<br>
+			Change some input areas to text areas (looks nicer)<br>
+			gearTableLabel (rearcap, frontcap)<br>
+			Added speed table<br>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;<br>Version 3.0</font>
+		</td>
+	</tr>
+	<tr>
+		<td>04/15/2009 - 04/18/2009</td>
+		<td>Graphical log plot with Walter Zorn's DHTML JavaScript
+			VectorGraphics Library<br>
+			11 speed support, Campy 11 speed cassettes <br>
+			Added DuraAce 10 speed cassettes<br>
+		 	Center the ascii tables when not 11 speed
+			Fixed bug in new centering - with 1 or 2 rings<br>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;<br>Version 3.1</font>
+		</td>
+	</tr>
+	<tr>
+		<td>04/19/2009 - 05/05/2009</td>
+		<td>Split the original file up into 3 pieces<br>
+			Put text areas inside div's so one html file can support
+			both ASCII and vector graphic displays.<br>
+			Change graph fonts to blue.<br>
+			Added 29er wheels 1.95, 2.1, 2.2, more tubular widths<br>
+			All tables drawn with vector graphics library<br>
+			Some code cleanup, output functions last<br>
+			Added error checking logic when incrementing/decrementing cog values<br>
+			Added sachs 13-28, 6 sp and 13-32, 7 sp
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;<br>Version 3.2</font>
+		</td>
+	</tr>
+	<tr>
+		<td>07/21/2009</td>
+		<td>check the RolloutType and SpeedType each time you draw the tables
+			fixes a bug where display and radio buttons don't agree after a reload
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;<br>Version 3.3</font>
+		</td>
+	</tr>
+	<tr>
+		<td>10/24/2009 - 01/07/2010</td>
+		<td>Added zinn crank lengths request from Greg M<br>
+			130, 135, 140, 145, 150, 155, 160 and 190, 195, 200, 205, 210, 215, 220<br>
+			Add 700x23 wheel size per user request
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;<br>Version 4.0</font>
+		</td>
+	</tr>
+	<tr>
+		<td>02/01/2010 - 02/06/2010</td>
+		<td>Add rpm/speed range display<br>
+			Fixed ghosted gear number labels on the top gear table<br>
+			Auto scale the rpm/speed range table<br>
+			Add some error handling on rpm range values<br>
+			Switchable horizontal lines in rpm/speed range table<br>
+			Fix errors in cassette numbering<br>
+			Add labels to sorted and unsorted speed range displays<br>
+			Sorted rpm/speed range display
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;<br>Version 4.1</font>
+		</td>
+	</tr>
+	<tr>
+		<td>02/08/2010 - 03/24/2010</td>
+		<td>Resize canvas for rpm/speed<br>
+ 			Add rpm range to cookie/save/load<br>
+			Add spacing between label and rpm range chart<br>
+			Make all color selections in the graphics functions variables.<br>
+			- there was a private release of the code up to this point<br>
+			Add zero checking to readRings() and readCogs() for when users enter<br>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;<br>Version 4.2</font>
+		</td>
+	</tr>
+	<tr>
+		<td>11/17/2010 - 1/1/2011</td>
+		<td>Fix display 3.00 value on gain ratio tables<br>
+			Fix bug displaying rollout > 10 meters<br>
+			Add ability to read parameters from URL<br>
+			Add credits page (this page)<br>
+			Add setCrank() function<br>
+			Add bookmark buttons - w & w/o the data<br>
+			Add bookmark/url info to credits page<br>
+			Add revision history to credits page.<br>
+			Add IRD freewheels to selectCassette.js<br>
+			Fix bug when typing in cogs or rings<br>
+			Add same fix to a few other inputs<br>
+			Fix typo on main page - Graphical
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;<br>Version 4.3</font>
+		</td>
+	</tr>
+	<tr>
+		<td>02/23/2011 - 04/17/2011</td>
+		<td>Add 20x1.5 wheel size to javascript (36) 40-406 tire (20")<br>
+			change bookmark to go to shift.html directly<br>
+ 			Add SRAM X5 cassette to selectCassette.js & shift.html (11-34, 9-speed)<br>
+			Clean up my internal documentation a bit.<br>
+			load with recall and swap - always comes back sorted<br>
+			sortgears is not and int - not read properly from cookie (as was showgrid)<br>
+			sortgears = "yes" | "no"  some places it was "on" | "off"<br>
+			split shift.js (this file) into a bunch of smaller files for easier management<br>
+			selectCassette.js renamed to shiftCassettes.js<br>
+			recall fixed.  was reading 'sort' and 'grid' from cookie w parse()= WRONG! <br>
+			tighten up the display a bit (shift.html)<br>
+			tighten up the display a bit more (shift.html)
+			fix problem with testing if there is a cookie - swap/recall problems<br>
+			fix a bunch of html issues (thanks to chrome)<br>
+			update the links to the sources, moved to credits page
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;Version 4.3.1</font>
+		</td>
+	</tr>
+	<tr>
+		<td>04/09/2011 - 05/19/2011</td>
+		<td>Move some functions around again.<br>
+			Bug fix - add update to setRPM - now display will update<br>
+			Bookmark set now reopens link with the arguments and posts an alert to save w Ctrl-D<br>
+			Speed up bookmark load - was updating screen too often<br>
+			Remove bookmark button (not the bookmarkSet button)<br>
+			Work on bookmarkSet<br>
+			Change default upper rpm to 100 (speed/rpm graph)<br>
+			Fixed problems with setting rpms on speed/rpm graph fixed parseInt problem.<br>
+			Same parseInt problem fixed in other areas of the code<br>
+			Add 700x30 wheel size<br>
+			Add selectedCassette() to the URL save<br>
+			Add code to select the correct items in the pull down menus when loaded from URL.
+			Now all picklists update from bookmarks<br>
+			Changed the names of the functions from 'write' to 'update'<br>
+			Add a small help section to this page<br>
+			Move the speed table to the bottom<br>
+			Fix so Check boxes get updated reading bookmarks<br>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;Version 4.4</font>
+		</td>
+	</tr>
+	<tr>
+		<td>05/20/2011 - 05/26/2011</td>
+		<td>Updates to this page.<br>
+			Add Help button on calculator page.
+			Move bookmark button above the chart type selection<br>
+			Add highlight to gear table gear on hover over cog control buttons<br>
+			Add highlight to log and speed graphs<br>
+			Add checkbox to enable/disable highlighting<br>
+			Add highlighting to cog text boxes<br>
+			Editing a cog directly removes selected cassette<br>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;Version 4.4.1</font>
+		</td>
+	</tr>
+	<tr>
+		<td>06/06/2011 - 06/07/2011</td>
+		<td>Remove border from Derailer Capacity display and link to Sheldon.<br>
+			Make all href's open on new page/tab<br>
+			Do some formatting cleanup.
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;Version 4.4.2</font>
+		</td>
+	</tr>
+	<tr>
+		<td>06/13/2011 - 07/01/2011</td>
+		<td>Code cleanup - standardize display I/O function names.<br>
+			Add URL text box to main page.<br>
+			Fix save/swap/recall with Chrome.  Tested w FF4, FF5, Chrome, and IE7.
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;Version 4.4.3</font>
+		</td>
+	</tr>
+	<tr>
+		<td>01/31/2012 - 02/25/2013</td>
+		<td>Update URL when page Title is changed.<br>
+			Change my email address to gmail.<br>
+			Add a switch to swap the order cogs and rings are displayed in all tables.  RFV LCI #1231<br>
+			Add 26x3.7, 26x4, 26x4.8, and 29x3 tires.
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;Version 5.0</font>
+		</td>
+	</tr>
+	<tr>
+		<td>10/05/2016 - 03/12/2018</td>
+		<td>Update added tabs.<br>
+			 Removed ASCII output.<br>
+			 Added highlighting to Gain and Rollout.<br>
+			 Allow for 13 cogs.<br>
+			 New wheel and tire selection.<br>
+			 Speed table removed and replaced.
+			 More cassettes added.
+			 Released on Earthlink for testing.
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;Version 5.1</font>
+		</td>
+	</tr>
+	<tr>
+		<td>03/12/2018 - 11/15/2018 - </td>
+		<td>Added combined cassette and chainring tab
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;Version 5.2</font>
+		</td>
+	</tr>
+	<tr>
+		<td>11/15/2018 - 11/17/2018</td>
+		<td>Added an All-in-One tab per user request.
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+			&nbsp;Version 5.2.1</font>
+		</td>
+	</tr>
+	<tr>
+		<td>11/15/2018 - </td>
+		<td>Added ASCII output per user request.
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2><font size="+1">
+			<hr>
+		</td>
+	</tr>
+
+
+
+	</table>
+	<p>
+	A more detailed change log can be found at the top of 
+	<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shift.js">shift.js</a>.
+</center>
+<hr>
+<center>
+<a name="SRC"><h3>Source Code</h3></a>
+</center>
+<a href="#TOP">Top</a><br>
+<a href="shift.html">Calculator</a>
+<br>
+<center>
+If you'd like to download a local copy for your computer, you will need these files:<p>
+<table border=0 width=80%>
+<tr><td>
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shift.html">shift.html</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/mike_shift.css">mike_shift.css</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftBookmarks.js">shiftBookmarks.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftCassettes.js">shiftCassettes.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftCookies.js">shiftCookies.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shift_credits.html">shift_credits.html</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftGearChart.js">shiftGearChart.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftInputs.js">shiftInputs.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shift.js">shift.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftLogChart.js">shiftLogChart.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftReadDisplay.js">shiftReadDisplay.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftRollout.js">shiftRollout.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftSheldon.js">shiftSheldon.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftSpeedChart.js">shiftSpeedChart.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftSpeedTable.js">shiftSpeedTable.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftUpdateDisplay.js">shiftUpdateDisplay.js</a>, 
+<A href="http://home.earthlink.net/~mike.sherman/shift5.0/shiftWheels.js">shiftWheels.js</a>, 
+and the <a href="http://www.walterzorn.com/jsgraphics/jsgraphics_e.htm">www.walterzorn.com DHTML JavaScript 
+VectorGraphics Library</a>
+</td></tr>
+</table>
+</center>
+
+
+
+<p>
+<hr>
+<center>
+<p>
+Return to <a href="shift.html">My Gear Calculator</a>
+<br>
+Return to <a href="bike.html">My bike page</a>
+<br>
+Return to <a href="index.html">My main page</a>
+
+</center>
+</body>
+</html>
