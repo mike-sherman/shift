@@ -79,7 +79,7 @@ function readCogs()
 	}
    // fix empty slots and zero slots
 
-   for ( i=0; i<11; i++){
+   for ( i=0; i<12; i++){
      if ((cogs[i] == "") || (cogs[i] == 0)) 
 	 {
        cogs[i] = 999;
@@ -159,9 +159,15 @@ function readxCogs()
 	} else {
 		cogs[10]= parseInt(document.mainForm.cogx10.value);
 	}
+	if (document.mainForm.cogx11.value < 1 || document.mainForm.cogx11.value > 999)
+	{
+		cogs[11] = 999;
+	} else {
+		cogs[11]= parseInt(document.mainForm.cogx11.value);
+	}
    // fix empty slots and zero slots
 
-   for ( i=0; i<11; i++){
+   for ( i=0; i<12; i++){
      if ((cogs[i] == "") || (cogs[i] == 0)) 
 	 {
        cogs[i] = 999;

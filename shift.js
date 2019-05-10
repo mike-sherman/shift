@@ -241,6 +241,8 @@
 // 04/11/2019	duplicated 5.2.1 to attempt to attempt to move it off earthlink
 //				and on to github
 // 05/09/2019	update cassettes on index.html (shift.html) and shiftCassettes.html
+// 05/10/2019	browser detectection - Not working - change tab-pane sizes
+//				make combined cassette-crank tab handle 12 cogs
 //
 //
 //  TODO
@@ -313,6 +315,8 @@
 // - version for portable devices (same as var width?)
 //   could read window width from browser and scale from that.
 //
+
+var browserType = "??";
 
 var debugString = "Debug area";
 // array of cogs we are using
@@ -423,6 +427,8 @@ function initGears()
 		} 
 	}
 	url = "file:///home/mike/Dropbox/www/shift/shift5.0/shift.html";
+
+	BrowserDetection();
 }
 
 function detectMobile()
@@ -494,7 +500,7 @@ function updateOutput()
 	speedTable();
 	sheldonRatios();
 	
-
+	updateBrowser();
 	//debug
 //	showDebug();
 
@@ -556,6 +562,8 @@ function calcGears()
 		Plspeed[i] = Math.round(lspeed[i] * 10) / 10;
 		Phspeed[i] = Math.round(hspeed[i] * 10) / 10;
 	}
+
+	BrowserDetection();
 }
 
 function RPMrangeCheck()
@@ -719,3 +727,71 @@ function processArgs()		// read arguments attched to our URL
 	}
 }
 
+function BrowserDetection() {
+	// Opera 8.0+
+	var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+	// Firefox 1.0+
+	var isFirefox = typeof InstallTrigger !== 'undefined';
+
+	// Safari 3.0+ "[object HTMLElementConstructor]" 
+	var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+
+	// Internet Explorer 6-11
+	var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+	// Edge 20+
+	var isEdge = !isIE && !!window.StyleMedia;
+
+	// Chrome 1 - 71
+	var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+
+	// Blink engine detection
+	var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+
+	//Check if browser is IE
+	if (isIE == true) {
+		browserType = "IE";
+	}
+	//Check if browser is Chrome
+	else if (isChrome == true) {
+		browserType = "CR";
+	}
+	//Check if browser is Firefox 
+	else if (isFirefox == true) {
+		browserType = "FF";
+	}
+	//Check if browser is Safari
+	else if (isSafari == true) {
+		browserType = "SF";
+	}
+	//Check if browser is Opera
+	else if (isOpera == true) {
+		browserType = "OP";
+	}
+	else {
+		browserType = "TBD";
+	}
+
+//    //Check if browser is IE
+//    if (navigator.userAgent.search("MSIE") & gt; = 0) {
+//        browserType = "IE";
+//    }
+//    //Check if browser is Chrome
+//    else if (navigator.userAgent.search("Chrome") & gt; = 0) {
+//        browserType = "CR";
+//    }
+//    //Check if browser is Firefox 
+//    else if (navigator.userAgent.search("Firefox") & gt; = 0) {
+//        browserType = "FF";
+//    }
+//    //Check if browser is Safari
+//    else if (navigator.userAgent.search("Safari") & gt; = 0 & amp; & amp; navigator.userAgent.search("Chrome") & lt; 0) {
+//        browserType = "SF";
+//    }
+//    //Check if browser is Opera
+//    else if (navigator.userAgent.search("Opera") & gt; = 0) {
+//        browserType = "OP";
+//    }
+}

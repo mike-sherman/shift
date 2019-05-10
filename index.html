@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Mike Sherman's Bicycle Gear Calculator</title>
+<LINK REL="stylesheet" HREF="shift.css" TYPE="text/css">
 <meta name="description" content="Bike Bicycle Gear Gearing Designer Calculator Graph" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -34,59 +35,62 @@
 <link id="winclassic-tab-style-sheet" type="text/css" rel="stylesheet" href="tab.winclassic.css"  disabled="disabled" />
 <!-- the id is not needed. It is used here to be able to change css file at runtime -->
 
+
+<!-- tab-pane height on tab-page - 
+		130 works for chrome at any window with
+		140 works with FF if the window is wide enough
+		165 or 170 works with FF at any window width - wastes screen space
+-->
 <style type="text/css">
 
+	.dynamic-tab-pane-control .tab-page {
+		height:		140px;  
+	}
 
-.dynamic-tab-pane-control .tab-page {
-	height:		130px;  
-}
+	.dynamic-tab-pane-control .tab-page2 {
+		height:		300px;
+	}
 
-.dynamic-tab-pane-control .tab-page2 {
-	height:		300px;
-}
+	.dynamic-tab-pane-control .tab-page .dynamic-tab-pane-control .tab-page {
+		height:		150px;
+	}
 
-.dynamic-tab-pane-control .tab-page .dynamic-tab-pane-control .tab-page {
-	height:		150px;
-}
+	html, body {
+		background:	ThreeDFace;
+	}
 
-html, body {
-	background:	ThreeDFace;
-}
+	form {
+		margin:		0;
+		padding:	0;
+	}
 
-form {
-	margin:		0;
-	padding:	0;
-}
+	/* over ride styles from webfxlayout */
 
-/* over ride styles from webfxlayout */
+	body {
+		margin:		5px;
+		width:		auto;
+		height:		auto;
+	}
 
-body {
-	margin:		5px;
-	width:		auto;
-	height:		auto;
-}
+	.dynamic-tab-pane-control h2 {
+		text-align:	center;
+		width:		auto;
+	}
 
-.dynamic-tab-pane-control h2 {
-	text-align:	center;
-	width:		auto;
-}
+	.dynamic-tab-pane-control h2 a {
+		display:	inline;
+	}
 
-.dynamic-tab-pane-control h2 a {
-	display:	inline;
-}
+	/*
+	.dynamic-tab-pane-control h2 a {
+		display:	inline;
+		width:		auto;
+	}
+	*/
 
-/*
-.dynamic-tab-pane-control h2 a {
-	display:	inline;
-	width:		auto;
-}
-*/
-
-.dynamic-tab-pane-control a:hover {
-	background: transparent;
-}
-
-
+	.dynamic-tab-pane-control a:hover {
+		background: transparent;
+	}
 
 </style>
 <script type="text/javascript" src="tabpane.js"></script>
@@ -128,6 +132,10 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 	
 	<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
 	
+	<!-- trying to make FF behave the same as chrome
+			 cellpadding="0" - didn't help
+			 cellspacing="0" - didn't help
+	-->
 	<TABLE border=1>
 	<TR>
 	  	<!-- default cogs = my Mariposa -->
@@ -724,38 +732,41 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 	<TABLE border=1>
 		<TR>
 		  	<!-- default cogs = my Mariposa -->
-		  	<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx0" SIZE=2 VALUE=12 onchange="readxCogs()"
+		  <TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx0" SIZE=2 VALUE=12 onchange="readxCogs()"
 			 	onmouseover="gearHighlight('0')" onmouseout="gearHighlight('99')">
 			</TD>
-		  	<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx1" SIZE=2 VALUE=13 onchange="readxCogs()"
+		  <TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx1" SIZE=2 VALUE=13 onchange="readxCogs()"
 			 	onmouseover="gearHighlight('1')" onmouseout="gearHighlight('99')">
 			</TD>
-		  	<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx2" SIZE=2 VALUE=14 onchange="readxCogs()"
+		  <TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx2" SIZE=2 VALUE=14 onchange="readxCogs()"
 			 	onmouseover="gearHighlight('2')" onmouseout="gearHighlight('99')">
 			</TD>
-		  	<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx3" SIZE=2 VALUE=15 onchange="readxCogs()"
+		  <TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx3" SIZE=2 VALUE=15 onchange="readxCogs()"
 			 	onmouseover="gearHighlight('3')" onmouseout="gearHighlight('99')">
 			</TD>
-		  	<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx4" SIZE=2 VALUE=16 onchange="readxCogs()"
+		  <TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx4" SIZE=2 VALUE=16 onchange="readxCogs()"
 				onmouseover="gearHighlight('4')" onmouseout="gearHighlight('99')">
 			</TD>
 			<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx5" SIZE=2 VALUE=17 onchange="readxCogs()"
 				onmouseover="gearHighlight('5')" onmouseout="gearHighlight('99')">
 			</TD>
-		  	<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx6" SIZE=2 VALUE=19 onchange="readxCogs()"
+		  <TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx6" SIZE=2 VALUE=19 onchange="readxCogs()"
 				onmouseover="gearHighlight('6')" onmouseout="gearHighlight('99')">
 			</TD>
 			<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx7" SIZE=2 VALUE=21 onchange="readxCogs()"
 				onmouseover="gearHighlight('7')" onmouseout="gearHighlight('99')">
 			</TD>
-		  	<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx8" SIZE=2 VALUE=23 onchange="readxCogs()"
+		  <TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx8" SIZE=2 VALUE=23 onchange="readxCogs()"
 				onmouseover="gearHighlight('8')" onmouseout="gearHighlight('99')">
 			</TD>
-		  	<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx9" SIZE=2 VALUE=25 onchange="readxCogs()"
+		  <TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx9" SIZE=2 VALUE=25 onchange="readxCogs()"
 				onmouseover="gearHighlight('9')" onmouseout="gearHighlight('99')">
 			</TD>
-		  	<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx10" SIZE=2 VALUE=999 onchange="readxCogs()"
+		  <TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx10" SIZE=2 VALUE=999 onchange="readxCogs()"
 				onmouseover="gearHighlight('10')" onmouseout="gearHighlight('99')">
+			</TD>
+			<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx11" SIZE=2 VALUE=999 onchange="readxCogs()"
+				onmouseover="gearHighlight('11')" onmouseout="gearHighlight('99')">
 			</TD>
 			 
 			<TD> </TD>
@@ -849,6 +860,13 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 					onmouseover="gearHighlight('10')" onmouseout="gearHighlight('99')"><br>
 				<INPUT TYPE="button" VALUE="  X  "  onClick="cogX('cogx10')" 
 					onmouseover="gearHighlight('10')" onmouseout="gearHighlight('99')"></TD>
+			<TD ALIGN=CENTER COLSPAN=1>
+				<INPUT TYPE="button" VALUE=" - "  onClick="cogMinus('cogx11')" 
+					onmouseover="gearHighlight('11')" onmouseout="gearHighlight('99')">
+				<INPUT TYPE="button" VALUE=" + "  onClick="cogPlus('cogx11')" 
+					onmouseover="gearHighlight('11')" onmouseout="gearHighlight('99')"><br>
+				<INPUT TYPE="button" VALUE="  X  "  onClick="cogX('cogx11')" 
+					onmouseover="gearHighlight('11')" onmouseout="gearHighlight('99')"></TD>
 				
 			<TD> </TD>
 
@@ -881,7 +899,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 				<a href="http://sheldonbrown.com/gloss_ca-g.html#capacity" target="_blank">Capacity</a>: 
 				<INPUT TYPE=text NAME="rearcapx" SIZE=2 style="border: none" readonly>
 			</TD>
-			<TD COLSPAN=7 ALIGN=center>
+			<TD COLSPAN=8 ALIGN=center>
 				<SELECT NAME="cassettex" onChange="selectxCassette()">
 					<OPTION value="0">Select a Cassette</OPTION>
 					<OPTION value="112">5 Speed Freewheel 13-17</OPTION>
@@ -1079,7 +1097,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 <div class="tab-pane" id="tabPane2">
 
 	<div class="tab-page2">
-		<!-- 		<br><p>only needed on firefox -->
+		<!-- <br><p>	<!-- only needed on firefox -->
 		<h2 class="tab">Speed Range</h2>
 		<font color="#000099">RPM Range from </font>
 		<INPUT TYPE="button" VALUE=" - "  onClick="lrpmMinus()">
@@ -1106,22 +1124,22 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 	</div>
 
 	<div class="tab-page2">
-	    <h2 class="tab">Semi-Log</h2>
-		<!-- 		<br><p><!-- only needed on firefox -->
+	  <h2 class="tab">Semi-Log</h2>
+		<!-- <br><p>	<!-- only needed on firefox -->
 		<div id="logCanvas" style="position:relative;height:82px;width:1000px;">
 		</div>
 	</div>
 
 
 	<div class="tab-page2">
-		<!-- 		<br><p><!-- only needed on firefox -->
+		<!-- <br><p>	<!-- only needed on firefox -->
 		<h2 class="tab">Inches</h2>
 		<div id="gtCanvas" style="position:relative;height:130px;width:700px;">
 		</div>
 	</div>
 
 	<div class="tab-page2">
-		<!-- 		<br><p><!-- only needed on firefox -->
+		<!-- <br><p>	<!-- only needed on firefox -->
 		<h2 class="tab">Rollout</h2>
 		<input type="radio" name="rolloutButton" onclick="readRolloutType()">
 			<font color="#000099">Inches</font>
@@ -1133,7 +1151,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 	</div>
 
 	<div class="tab-page2">
-		<!-- 		<br><p><!-- only needed on firefox -->
+		<!-- <br><p><!-- only needed on firefox -->
 		<h2 class="tab">Gain</h2>
 			<font color="#000099", size="3">Gain Ratio Chart<br></font>
 		<div id="gainCanvas" style="position:relative;height:100px;width:600px;">
@@ -1141,7 +1159,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 	</div>
 
 	<div class="tab-page2">
-		<!--	<br><p><!-- only needed on firefox -->
+		<!-- <br><p>	<!-- only needed on firefox -->
 		<h2 class="tab">Speed</h2>
 		<INPUT TYPE="button" VALUE=" - "  onClick="rpmMinus()">
 		<input type="text" name="RPM" size=3 onChange="readRPM()">
@@ -1156,7 +1174,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 	</div>	
 	
 	<div class="tab-page2">
-		<!-- 		<br><p>only needed on firefox -->
+		<!-- <br><p>	<!-- only needed on firefox -->
 		<h2 class="tab">All-in-One</h2>
 		
 		<font color="#000099", size="3">Speed Range<br></font>
@@ -1181,7 +1199,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 		<input type="checkbox" name="sortgears2" onclick="sortGears2()"><font color="#000099">Sort</font>
 		<br>
 	
-		<div id="speedRangeCanvas2" style="position:relative;height:330px;width:800px;">
+		<div id="speedRangeCanvas2" style="position:relative;height:360px;width:800px;">
 		</div>
 
 		<font color="#000099", size="3">Log Chart</font> <br>
@@ -1206,15 +1224,15 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 	</div>
 
 	<div class="tab-page2">
-		<!--	<br><p><!-- only needed on firefox -->
+		<!-- <br><p>	<!-- only needed on firefox -->
 		<h2 class="tab">ASCII</h2>
 		<!--	Gear table -------------------------------------------
 		ASCII - Label = 1 line, table = 6 lines (one as a divider line)
 		Graphical - 5 lines of text cells 40x20 pixels  = 480x100 pixels  -->
-		<div id="gtCanvas" style="position:relative;height:130px;width:700px;">
+		<div id="gtCanvas" style="position:relative;height:130px;width:860px;">
 			<textarea name="gearTableLabel" rows=1 cols=26 style="overflow:hidden" readonly></textarea>
 			<br>
-			<textarea name="gearTable" rows=6 cols=72 style="overflow:hidden" readonly></textarea>
+			<textarea name="gearTable" rows=6 cols=95 style="overflow:hidden" readonly></textarea>
 		</div>
 
 		<!-- 	rollout table output ------------------------------ -->
@@ -1224,8 +1242,8 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 		<input type="radio" name="rolloutButtonA" onclick="readRolloutTypeA()"
  			checked ><font color="#000099">Meters</font>
 		<br>
-		<div id="rollCanvas" style="position:relative;height:100px;width:600px;">
-			<textarea name="rollout" rows=6 cols=83 style="overflow:hidden" readonly></textarea>
+		<div id="rollCanvas" style="position:relative;height:100px;width:860px;">
+			<textarea name="rollout" rows=6 cols=95 style="overflow:hidden" readonly></textarea>
 		</div>
 		<br>
 		<!-- 	speed table output ------------------------------ -->
@@ -1238,24 +1256,24 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 		<input type="radio" name="speedButtonA" onclick="readSpeedTypeA()" checked><font color="#000099">mph</font>
 		<input type="radio" name="speedButtonA" onclick="readSpeedTypeA()"><font color="#000099">kph</font>
 		<br>
-		<div id="speedCanvas" style="position:relative;height:100px;width:600px;">
-			<textarea name="speed" rows=6 cols=72 style="overflow:hidden" readonly></textarea>
+		<div id="speedCanvas" style="position:relative;height:100px;width:860px;">
+			<textarea name="speed" rows=6 cols=95 style="overflow:hidden" readonly></textarea>
 		</div>
 		<br>
 		<!-- 	gain ratio table output ------------------------------ -->
 		<font color="#000099">Sheldon Brown's</font> <a href="http://sheldonbrown.com/gain" target="_blank">Gain Ratio</a> 
 		<font color="#000099">Chart<br></font>
-		<div id="gainCanvas" style="position:relative;height:100px;width:600px;">
-			<textarea name="sheldon" rows=6 cols=72 style="overflow:hidden" readonly></textarea>
+		<div id="gainCanvas" style="position:relative;height:100px;width:860px;">
+			<textarea name="sheldon" rows=6 cols=95 style="overflow:hidden" readonly></textarea>
 		</div>
 	</div>	
 
 	<div class="tab-page2">
-		<!-- 		<br><p><!-- only needed on firefox -->
+		<!-- <br><p>	<!-- only needed on firefox -->
 		<h2 class="tab">About</h2>
 		<b>Mike Sherman's Bicycle Gear Calculator</b>
 		<p>
-		Revision 6.01
+		Revision 6.02
 		<p>
 		Comments, suggestions, and bugs to: Mike Sherman at 
 			<a href="mailto:wheelwrightmike@gmail.com">wheelwrightmike@gmail.com</a>. 
@@ -1277,6 +1295,8 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 		Here's <a href="shift_credits.html">some more</a> about the program and its history.
 		<p>
 			index.HTML
+			<br>
+			Browser = <INPUT TYPE=text NAME="browser" SIZE=2 style="border: none" readonly>
 		</p>
 
 	</div>

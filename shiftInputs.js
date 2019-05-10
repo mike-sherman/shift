@@ -174,6 +174,13 @@ function cogPlus ( whichCog )
       cogs[10]++;
     }
     break;
+  case "cogx11":
+    if (cogs[11] == 999  ){
+      cogs[11]=parseInt(cogs[10])+1;
+    }else{
+      cogs[11]++;
+    }
+    break;
   default:
     break;
   }
@@ -313,6 +320,11 @@ function cogMinus ( whichCog )
       cogs[10]--;
     }
     break;
+  case "cogx11":
+    if (cogs[11] > 0 && cogs[11] < 999){
+      cogs[11]--;
+    }
+    break;
 
    default:
       break;
@@ -405,7 +417,9 @@ function cogX ( whichCog )
   case "cogx10":
     cogs[10]=999;
     break;
-
+  case "cogx11":
+    cogs[11]=999;
+    break;
 
    default:
       break;

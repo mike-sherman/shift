@@ -1,0 +1,24 @@
+th, td {
+    padding: 0px;
+    vertical-align: center;
+}
+table {
+    table-layout: fixed
+}
+/* Remove button padding in FF */
+button::-moz-focus-inner {
+    border:0;
+    padding:0;
+}
+/* */
+input{
+    /*
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    */
+    padding-top: 1px;
+    padding-right: 3px;
+    padding-bottom: 1px;
+    padding-left: 3px;
+}
+/* */
