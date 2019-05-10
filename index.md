@@ -286,7 +286,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 	  	</TD>
 	  	<TD COLSPAN=8 ALIGN=center>
 	    	<SELECT NAME="cassette" onChange="selectCassette()">
-					<OPTION value="0">Select a Cassette</OPTION>
+				<OPTION value="0">Select a Cassette</OPTION>
 					<OPTION value="112">5 Speed Freewheel 13-17</OPTION>
 					<OPTION value="113">5 Speed Freewheel 13-18</OPTION>
 					<OPTION value="114">5 Speed Freewheel 13-22</OPTION>
@@ -912,8 +912,8 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 					<OPTION value="3">Sachs 6 Speed Freewheel 13-21</OPTION>
 					<OPTION value="4">Sachs 6 Speed Freewheel 13-24</OPTION>
 					<OPTION value="5">Sachs 6 Speed Freewheel 13-26</OPTION>
-	                <OPTION value="6">Sachs 6 Speed Freewheel 13-28</OPTION>
-	                <OPTION value="151">Shimano  HG40 6 speed mega 14-34</OPTION>
+	        <OPTION value="6">Sachs 6 Speed Freewheel 13-28</OPTION>
+	        <OPTION value="151">Shimano  HG40 6 speed mega 14-34</OPTION>
 					<OPTION value="138">IRD 7 Speed Freewheel 13-24</OPTION>
 					<OPTION value="139">IRD 7 Speed Freewheel 13-28</OPTION>
 					<OPTION value="141">IRD 7 Speed Freewheel 13-32</OPTION>
@@ -1255,7 +1255,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 		<h2 class="tab">About</h2>
 		<b>Mike Sherman's Bicycle Gear Calculator</b>
 		<p>
-		Revision 6.01
+		Revision 6.0
 		<p>
 		Comments, suggestions, and bugs to: Mike Sherman at 
 			<a href="mailto:wheelwrightmike@gmail.com">wheelwrightmike@gmail.com</a>. 
