@@ -239,6 +239,8 @@
 //				add tab for ASCII display. add shiftASCII.js to contain functions
 // ----------shift6.0 ---------------------------------------------
 // 04/11/2019	duplicated 5.2.1 to attempt to attempt to move it off earthlink
+//				and on to github
+// 05/09/2019	update cassettes on index.html (shift.html) and shiftCassettes.html
 //
 //
 //  TODO

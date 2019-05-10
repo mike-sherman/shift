@@ -8,8 +8,9 @@
 // 03/04/2011	SRAM X5 cassette - it's an 11-34, 9-speed cassette 
 //              cogs are 11,13,15,17,20,23,26,30,34 as the cog sizes. 
 //              Ken Benson <ken@bkenbenson.com>
-// 12/11/2017 add new cassettes, remove redundant cassettes 
-//            generated from spreadsheet
+// 12/11/2017   add new cassettes, remove redundant cassettes 
+//              generated from spreadsheet
+// 05/09/2019   add cassettes
 //
 // Copyright (c) 2004-2017 Michael Sherman. All rights reserved.
 //
@@ -709,7 +710,7 @@ function setCassette()
     cogs[11] = 999;
     cogs[12] = 999;
   }
-  if ( cassetteSelection == 81 ){ // SRAM 10 speed Cassette 11-28
+  if ( cassetteSelection == 81 ){ // SRAM 10 speed Cassette 11-28 - corrected
     cogs[0] = 11;
     cogs[1] = 12;
     cogs[2] = 13;
@@ -717,8 +718,8 @@ function setCassette()
     cogs[4] = 15;
     cogs[5] = 17;
     cogs[6] = 19;
-    cogs[7] = 21;
-    cogs[8] = 24;
+    cogs[7] = 22;
+    cogs[8] = 25;
     cogs[9] = 28;
     cogs[10] = 999;
     cogs[11] = 999;
@@ -754,7 +755,7 @@ function setCassette()
     cogs[11] = 999;
     cogs[12] = 999;
   }
-  if ( cassetteSelection == 93 ){ // SRAM 10 speed Cassette 12-25
+  if ( cassetteSelection == 93 ){ // SRAM 10 speed Cassette 12-25 - corrected
     cogs[0] = 12;
     cogs[1] = 13;
     cogs[2] = 14;
@@ -764,7 +765,7 @@ function setCassette()
     cogs[6] = 19;
     cogs[7] = 21;
     cogs[8] = 23;
-    cogs[9] = 26;
+    cogs[9] = 25;
     cogs[10] = 999;
     cogs[11] = 999;
     cogs[12] = 999;
@@ -799,29 +800,29 @@ function setCassette()
     cogs[11] = 999;
     cogs[12] = 999;
   }
-  if ( cassetteSelection == 126 ){ // Campagnolo 11 speed Cassette 11-23
+  if ( cassetteSelection == 126 ){ // Campagnolo 11 speed Cassette 11-23 - corrected
     cogs[0] = 11;
     cogs[1] = 12;
     cogs[2] = 13;
     cogs[3] = 14;
     cogs[4] = 15;
-    cogs[5] = 17;
-    cogs[6] = 18;
-    cogs[7] = 19;
-    cogs[8] = 20;
+    cogs[5] = 16;
+    cogs[6] = 17;
+    cogs[7] = 18;
+    cogs[8] = 19;
     cogs[9] = 21;
     cogs[10] = 23;
     cogs[11] = 999;
     cogs[12] = 999;
   }
-  if ( cassetteSelection == 127 ){ // Campagnolo 11 speed Cassette 11-25
+  if ( cassetteSelection == 127 ){ // Campagnolo 11 speed Cassette 11-25 - corrected
     cogs[0] = 11;
     cogs[1] = 12;
     cogs[2] = 13;
     cogs[3] = 14;
     cogs[4] = 15;
-    cogs[5] = 17;
-    cogs[6] = 18;
+    cogs[5] = 16;
+    cogs[6] = 17;
     cogs[7] = 19;
     cogs[8] = 21;
     cogs[9] = 23;
@@ -2282,9 +2283,278 @@ function setCassette()
     cogs[10] = 999;
     cogs[11] = 999;
     cogs[12] = 999;
+ 
+  if ( cassetteSelection == 152 ){ // Shimano 11 speed Cassette 14-28
+    cogs[0] = 14;
+    cogs[1] = 15;
+    cogs[2] = 16;
+    cogs[3] = 17;
+    cogs[4] = 18;
+    cogs[5] = 19;
+    cogs[6] = 20;
+    cogs[7] = 21;
+    cogs[8] = 23;
+    cogs[9] = 25;
+    cogs[10] = 28;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection ==  153){ // Shimano 11 speed Cassette 11-32
+    cogs[0] = 11;
+    cogs[1] = 12;
+    cogs[2] = 13;
+    cogs[3] = 14;
+    cogs[4] = 16;
+    cogs[5] = 18;
+    cogs[6] = 20;
+    cogs[7] = 22;
+    cogs[8] = 25;
+    cogs[9] = 28;
+    cogs[10] = 32;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection ==  154){ // Shimano 11 speed Cassette 11-34
+    cogs[0] = 11;
+    cogs[1] = 13;
+    cogs[2] = 15;
+    cogs[3] = 17;
+    cogs[4] = 19;
+    cogs[5] = 21;
+    cogs[6] = 23;
+    cogs[7] = 25;
+    cogs[8] = 27;
+    cogs[9] = 30;
+    cogs[10] = 34;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection ==  155){ // SRAM 10 speed Cassette 11-23
+    cogs[0] = 11;
+    cogs[1] = 12;
+    cogs[2] = 13;
+    cogs[3] = 14;
+    cogs[4] = 15;
+    cogs[5] = 16;
+    cogs[6] = 17;
+    cogs[7] = 19;
+    cogs[8] = 21;
+    cogs[9] = 23;
+    cogs[10] = 999;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection ==  156){ // SRAM 10 speed Cassette 12-26
+    cogs[0] = 12;
+    cogs[1] = 13;
+    cogs[2] = 14;
+    cogs[3] = 15;
+    cogs[4] = 16;
+    cogs[5] = 17;
+    cogs[6] = 19;
+    cogs[7] = 21;
+    cogs[8] = 23;
+    cogs[9] = 26;
+    cogs[10] = 999;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 157 ){ // SRAM 10 speed Cassette 12-27
+    cogs[0] = 12;
+    cogs[1] = 13;
+    cogs[2] = 14;
+    cogs[3] = 15;
+    cogs[4] = 16;
+    cogs[5] = 17;
+    cogs[6] = 19;
+    cogs[7] = 21;
+    cogs[8] = 24;
+    cogs[9] = 27;
+    cogs[10] = 999;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 158 ){ // SRAM 11 speed Cassette 11-25
+    cogs[0] = 11;
+    cogs[1] = 12;
+    cogs[2] = 13;
+    cogs[3] = 14;
+    cogs[4] = 15;
+    cogs[5] = 16;
+    cogs[6] = 17;
+    cogs[7] = 19;
+    cogs[8] = 21;
+    cogs[9] = 23;
+    cogs[10] = 25;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 159 ){ // SRAM 11 speed Cassette 11-30
+    cogs[0] = 11;
+    cogs[1] = 12;
+    cogs[2] = 13;
+    cogs[3] = 14;
+    cogs[4] = 15;
+    cogs[5] = 17;
+    cogs[6] = 19;
+    cogs[7] = 21;
+    cogs[8] = 24;
+    cogs[9] = 27;
+    cogs[10] = 30;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 160 ){ // SRAM 11 speed Cassette 11-42
+    cogs[0] = 11;
+    cogs[1] = 13;
+    cogs[2] = 15;
+    cogs[3] = 17;
+    cogs[4] = 19;
+    cogs[5] = 22;
+    cogs[6] = 25;
+    cogs[7] = 28;
+    cogs[8] = 32;
+    cogs[9] = 36;
+    cogs[10] = 42;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 161 ){ // Campagnolo 11 speed Cassette 11-27
+    cogs[0] = 11;
+    cogs[1] = 12;
+    cogs[2] = 13;
+    cogs[3] = 14;
+    cogs[4] = 15;
+    cogs[5] = 17;
+    cogs[6] = 19;
+    cogs[7] = 21;
+    cogs[8] = 23;
+    cogs[9] = 25;
+    cogs[10] = 27;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 162 ){ // Campagnolo 11 speed Cassette 11-29
+    cogs[0] = 11;
+    cogs[1] = 12;
+    cogs[2] = 13;
+    cogs[3] = 14;
+    cogs[4] = 15;
+    cogs[5] = 17;
+    cogs[6] = 19;
+    cogs[7] = 21;
+    cogs[8] = 23;
+    cogs[9] = 26;
+    cogs[10] = 29;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 163 ){ // Campagnolo 11 speed Cassette 12-29
+    cogs[0] = 12;
+    cogs[1] = 13;
+    cogs[2] = 14;
+    cogs[3] = 15;
+    cogs[4] = 16;
+    cogs[5] = 17;
+    cogs[6] = 19;
+    cogs[7] = 21;
+    cogs[8] = 23;
+    cogs[9] = 26;
+    cogs[10] = 29;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 164 ){ // SRAM 12 speed Cassette 10-26
+    cogs[0] = 10;
+    cogs[1] = 11;
+    cogs[2] = 12;
+    cogs[3] = 13;
+    cogs[4] = 14;
+    cogs[5] = 15;
+    cogs[6] = 16;
+    cogs[7] = 17;
+    cogs[8] = 19;
+    cogs[9] = 21;
+    cogs[10] = 23;
+    cogs[11] = 26;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 165 ){ // SRAM 12 speed Cassette 10-28
+    cogs[0] = 10;
+    cogs[1] = 11;
+    cogs[2] = 12;
+    cogs[3] = 13;
+    cogs[4] = 14;
+    cogs[5] = 15;
+    cogs[6] = 16;
+    cogs[7] = 17;
+    cogs[8] = 19;
+    cogs[9] = 21;
+    cogs[10] = 24;
+    cogs[11] = 28;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 166 ){ // SRAM 12 speed Cassette 10-33
+    cogs[0] = 10;
+    cogs[1] = 11;
+    cogs[2] = 12;
+    cogs[3] = 13;
+    cogs[4] = 14;
+    cogs[5] = 15;
+    cogs[6] = 17;
+    cogs[7] = 19;
+    cogs[8] = 21;
+    cogs[9] = 24;
+    cogs[10] = 28;
+    cogs[11] = 33;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 167 ){ // Campagnolo 12 speed Cassette 11-29
+    cogs[0] = 11;
+    cogs[1] = 12;
+    cogs[2] = 13;
+    cogs[3] = 14;
+    cogs[4] = 15;
+    cogs[5] = 16;
+    cogs[6] = 17;
+    cogs[7] = 19;
+    cogs[8] = 21;
+    cogs[9] = 23;
+    cogs[10] = 26;
+    cogs[11] = 29;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 168 ){ // Campagnolo 12 speed Cassette 11-32
+    cogs[0] = 11;
+    cogs[1] = 12;
+    cogs[2] = 13;
+    cogs[3] = 14;
+    cogs[4] = 15;
+    cogs[5] = 16;
+    cogs[6] = 17;
+    cogs[7] = 19;
+    cogs[8] = 22;
+    cogs[9] = 25;
+    cogs[10] = 28;
+    cogs[11] = 32;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 169 ){ // Campagnolo 12 speed Cassette 11-34
+    cogs[0] = 11;
+    cogs[1] = 12;
+    cogs[2] = 13;
+    cogs[3] = 14;
+    cogs[4] = 15;
+    cogs[5] = 16;
+    cogs[6] = 17;
+    cogs[7] = 19;
+    cogs[8] = 22;
+    cogs[9] = 25;
+    cogs[10] = 29;
+    cogs[11] = 34;
+    cogs[12] = 999;
   }
 
-  
   debugString = cassetteSelection;
   updateOutput();
 }
