@@ -2283,7 +2283,7 @@ function setCassette()
     cogs[10] = 999;
     cogs[11] = 999;
     cogs[12] = 999;
- 
+  }
   if ( cassetteSelection == 152 ){ // Shimano 11 speed Cassette 14-28
     cogs[0] = 14;
     cogs[1] = 15;
