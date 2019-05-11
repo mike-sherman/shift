@@ -165,6 +165,13 @@ function readxCogs()
 	} else {
 		cogs[11]= parseInt(document.mainForm.cogx11.value);
 	}
+	if (document.mainForm.cogx12.value < 1 || document.mainForm.cogx12.value > 999)
+	{
+		cogs[12] = 999;
+	} else {
+		cogs[12]= parseInt(document.mainForm.cogx12.value);
+	}
+
    // fix empty slots and zero slots
 
    for ( i=0; i<12; i++){

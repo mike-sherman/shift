@@ -248,6 +248,11 @@ function writexCogs()	// update the cog display
    }else{
       document.mainForm.cogx11.value="";
    }
+   if (cogs[12] < 999){
+      document.mainForm.cogx12.value=cogs[12];
+   }else{
+      document.mainForm.cogx12.value="";
+   }
 
 	// set the correct item in the pull down menu
 	for ( var i = 0; i < document.mainForm.cassettex.options.length; i++ ) 

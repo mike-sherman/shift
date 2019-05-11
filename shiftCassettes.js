@@ -867,7 +867,7 @@ function setCassette()
     cogs[3] = 14;
     cogs[4] = 15;
     cogs[5] = 17;
-    cogs[6] = 19;
+    cogs[6] = 18;
     cogs[7] = 22;
     cogs[8] = 25;
     cogs[9] = 28;
@@ -920,7 +920,7 @@ function setCassette()
     cogs[11] = 999;
     cogs[12] = 999;
   }
-  if ( cassetteSelection == 72 ){ // Shimano 11 speed Cassette 11-40
+  if ( cassetteSelection == 72 ){ // Shimano 11 speed Cassette 11-40 - corrected
     cogs[0] = 11;
     cogs[1] = 13;
     cogs[2] = 15;
@@ -930,7 +930,7 @@ function setCassette()
     cogs[6] = 24;
     cogs[7] = 27;
     cogs[8] = 31;
-    cogs[9] = 36;
+    cogs[9] = 35;
     cogs[10] = 40;
     cogs[11] = 999;
     cogs[12] = 999;
@@ -2299,7 +2299,7 @@ function setCassette()
     cogs[11] = 999;
     cogs[12] = 999;
   }
-  if ( cassetteSelection ==  153){ // Shimano 11 speed Cassette 11-32
+  if ( cassetteSelection == 153){ // Shimano 11 speed Cassette 11-32
     cogs[0] = 11;
     cogs[1] = 12;
     cogs[2] = 13;
@@ -2554,7 +2554,729 @@ function setCassette()
     cogs[11] = 34;
     cogs[12] = 999;
   }
+  if ( cassetteSelection == 170 ){ // Campagnolo 11 speed Cassette 12-32
+    cogs[0] = 12;
+    cogs[1] = 13;
+    cogs[2] = 14;
+    cogs[3] = 15;
+    cogs[4] = 16;
+    cogs[5] = 17;
+    cogs[6] = 19;
+    cogs[7] = 22;
+    cogs[8] = 25;
+    cogs[9] = 27;
+    cogs[10] = 32;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 171 ){ // Box Two 11 speed 11-46
+    cogs[0] = 11;
+    cogs[1] = 13;
+    cogs[2] = 15;
+    cogs[3] = 18;
+    cogs[4] = 21;
+    cogs[5] = 24;
+    cogs[6] = 28;
+    cogs[7] = 32;
+    cogs[8] = 36;
+    cogs[9] = 40;
+    cogs[10] = 46;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 172 ){ // Box Two 11 speed 11-50
+    cogs[0] = 11;
+    cogs[1] = 13;
+    cogs[2] = 15;
+    cogs[3] = 18;
+    cogs[4] = 21;
+    cogs[5] = 24;
+    cogs[6] = 28;
+    cogs[7] = 32;
+    cogs[8] = 36;
+    cogs[9] = 42;
+    cogs[10] = 50;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 173 ){ // e*thirteen 11 speed 9-34
+    cogs[0] = 9;
+    cogs[1] = 11;
+    cogs[2] = 13;
+    cogs[3] = 15;
+    cogs[4] = 17;
+    cogs[5] = 19;
+    cogs[6] = 21;
+    cogs[7] = 24;
+    cogs[8] = 27;
+    cogs[9] = 30;
+    cogs[10] = 34;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 174 ){ // e*thirteen 11 speed 9-39
+    cogs[0] = 9;
+    cogs[1] = 11;
+    cogs[2] = 13;
+    cogs[3] = 15;
+    cogs[4] = 17;
+    cogs[5] = 19;
+    cogs[6] = 21;
+    cogs[7] = 24;
+    cogs[8] = 28;
+    cogs[9] = 33;
+    cogs[10] = 39;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 175 ){ // e*thirteen 11 speed 9-42
+    cogs[0] = 9;
+    cogs[1] = 11;
+    cogs[2] = 13;
+    cogs[3] = 15;
+    cogs[4] = 17;
+    cogs[5] = 20;
+    cogs[6] = 23;
+    cogs[7] = 27;
+    cogs[8] = 31;
+    cogs[9] = 36;
+    cogs[10] = 42;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
+  if ( cassetteSelection == 176 ){ // e*thirteen 11 speed 9-46
+    cogs[0] = 9;
+    cogs[1] = 10;
+    cogs[2] = 12;
+    cogs[3] = 14;
+    cogs[4] = 17;
+    cogs[5] = 20;
+    cogs[6] = 24;
+    cogs[7] = 28;
+    cogs[8] = 33;
+    cogs[9] = 39;
+    cogs[10] = 46;
+    cogs[11] = 999;
+    cogs[12] = 999;
+  }
 
+
+	if ( cassetteSelection == 177 ){  // Garbaruk 11 speed 10-46	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 19;
+		cogs[5] = 22;
+		cogs[6] = 26;
+		cogs[7] = 30;
+		cogs[8] = 36;
+		cogs[9] = 42;
+		cogs[10] = 46;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 178 ){  // Garbaruk 11 speed 10-48	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 19;
+		cogs[5] = 22;
+		cogs[6] = 26;
+		cogs[7] = 30;
+		cogs[8] = 36;
+		cogs[9] = 42;
+		cogs[10] = 48;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 179 ){  // Garbaruk 11 speed 10-50	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 19;
+		cogs[5] = 22;
+		cogs[6] = 26;
+		cogs[7] = 30;
+		cogs[8] = 36;
+		cogs[9] = 42;
+		cogs[10] = 50;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 180 ){  // Garbaruk 11 speed 11-46	
+		cogs[0] = 11;
+		cogs[1] = 13;
+		cogs[2] = 15;
+		cogs[3] = 17;
+		cogs[4] = 20;
+		cogs[5] = 24;
+		cogs[6] = 28;
+		cogs[7] = 32;
+		cogs[8] = 36;
+		cogs[9] = 42;
+		cogs[10] = 46;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 181 ){  // Garbaruk 11 speed 11-48	
+		cogs[0] = 11;
+		cogs[1] = 13;
+		cogs[2] = 15;
+		cogs[3] = 17;
+		cogs[4] = 20;
+		cogs[5] = 24;
+		cogs[6] = 28;
+		cogs[7] = 32;
+		cogs[8] = 36;
+		cogs[9] = 42;
+		cogs[10] = 48;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 182 ){  // Garbaruk 11 speed 11-50	
+		cogs[0] = 11;
+		cogs[1] = 13;
+		cogs[2] = 15;
+		cogs[3] = 17;
+		cogs[4] = 20;
+		cogs[5] = 24;
+		cogs[6] = 28;
+		cogs[7] = 32;
+		cogs[8] = 36;
+		cogs[9] = 42;
+		cogs[10] = 50;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 183 ){  // Hope 11 speed 10-40	10	
+		cogs[0] = 10
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 18;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 40;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 184 ){  // Hope 11 speed 10-44	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 18;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 38;
+		cogs[10] = 44;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 185 ){  // Hope 11 speed 10-48	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 18;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 33;
+		cogs[9] = 40;
+		cogs[10] = 48;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 186 ){  // Leonardi 11 speed 9-36	
+		cogs[0] = 9;
+		cogs[1] = 10;
+		cogs[2] = 12;
+		cogs[3] = 14;
+		cogs[4] = 16;
+		cogs[5] = 18;
+		cogs[6] = 20;
+		cogs[7] = 23;
+		cogs[8] = 27;
+		cogs[9] = 31;
+		cogs[10] = 36;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 187 ){  // Leonardi 11 speed 9-42	
+		cogs[0] = 9;
+		cogs[1] = 11;
+		cogs[2] = 13;
+		cogs[3] = 15;
+		cogs[4] = 17;
+		cogs[5] = 20;
+		cogs[6] = 23;
+		cogs[7] = 27;
+		cogs[8] = 31;
+		cogs[9] = 36;
+		cogs[10] = 42;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 188 ){  // Leonardi 11 speed 9-45	
+		cogs[0] = 9;
+		cogs[1] = 11;
+		cogs[2] = 13;
+		cogs[3] = 15;
+		cogs[4] = 17;
+		cogs[5] = 20;
+		cogs[6] = 23;
+		cogs[7] = 27;
+		cogs[8] = 32;
+		cogs[9] = 38;
+		cogs[10] = 45;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 189 ){  // Microshift 11-speed 11-25	
+		cogs[0] = 11;
+		cogs[1] = 12;
+		cogs[2] = 13;
+		cogs[3] = 14;
+		cogs[4] = 15;
+		cogs[5] = 16;
+		cogs[6] = 17;
+		cogs[7] = 19;
+		cogs[8] = 21;
+		cogs[9] = 23;
+		cogs[10] = 25;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 190 ){  // Microshift 11-speed 11-28	
+		cogs[0] = 11;
+		cogs[1] = 12;
+		cogs[2] = 13;
+		cogs[3] = 14;
+		cogs[4] = 15;
+		cogs[5] = 16;
+		cogs[6] = 17;
+		cogs[7] = 19;
+		cogs[8] = 21;
+		cogs[9] = 24;
+		cogs[10] = 28;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 191 ){  // Microshift 11-speed 11-32	
+		cogs[0] = 11;
+		cogs[1] = 12;
+		cogs[2] = 13;
+		cogs[3] = 14;
+		cogs[4] = 15;
+		cogs[5] = 17;
+		cogs[6] = 19;
+		cogs[7] = 21;
+		cogs[8] = 24;
+		cogs[9] = 28;
+		cogs[10] = 32;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 192 ){  // Microshift 11-speed 11-40	
+		cogs[0] = 11;
+		cogs[1] = 13;
+		cogs[2] = 15;
+		cogs[3] = 17;
+		cogs[4] = 19;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 40;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 193 ){  // Microshift 11-speed 11-42	
+		cogs[0] = 11;
+		cogs[1] = 13;
+		cogs[2] = 15;
+		cogs[3] = 17;
+		cogs[4] = 19;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 42;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 194 ){  // Sunrace 11 speed 10-42	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 18;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 42;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 195 ){  // Sunrace 11 speed 11-40	
+		cogs[0] = 11;
+		cogs[1] = 13;
+		cogs[2] = 15;
+		cogs[3] = 17;
+		cogs[4] = 19;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 40;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 196 ){  // Sunrace 11 speed 11-42	
+		cogs[0] = 11;
+		cogs[1] = 13;
+		cogs[2] = 15;
+		cogs[3] = 17;
+		cogs[4] = 19;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 42;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 197 ){  // Sunrace 11 speed 11-46	
+		cogs[0] = 11;
+		cogs[1] = 13;
+		cogs[2] = 15;
+		cogs[3] = 18;
+		cogs[4] = 21;
+		cogs[5] = 24;
+		cogs[6] = 28;
+		cogs[7] = 32;
+		cogs[8] = 36;
+		cogs[9] = 40;
+		cogs[10] = 46;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 198 ){  // Sunrace 11 speed 11-50	
+		cogs[0] = 11;
+		cogs[1] = 13;
+		cogs[2] = 15;
+		cogs[3] = 18;
+		cogs[4] = 21;
+		cogs[5] = 24;
+		cogs[6] = 28;
+		cogs[7] = 32;
+		cogs[8] = 36;
+		cogs[9] = 42;
+		cogs[10] = 50;
+		cogs[11] = 999;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 199 ){  // Shimano 12 speed 10-45	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 18;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 40;
+		cogs[11] = 45;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 200 ){  // Shimano 12 speed 10-51	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 18;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 33;
+		cogs[9] = 39;
+		cogs[10] = 45;
+		cogs[11] = 51;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 201 ){  // SRAM 12 speed 10-50	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 18;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 42;
+		cogs[11] = 50	;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 202 ){  // SRAM 12 speed 11-50	
+		cogs[0] = 11;
+		cogs[1] = 13;
+		cogs[2] = 15;
+		cogs[3] = 17;
+		cogs[4] = 19;
+		cogs[5] = 22;
+		cogs[6] = 25;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 42;
+		cogs[11] = 50	;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 203 ){  // e*thirteen 12 speed 9-46	
+		cogs[0] = 9;
+		cogs[1] = 10;
+		cogs[2] = 12;
+		cogs[3] = 14;
+		cogs[4] = 16;
+		cogs[5] = 18;
+		cogs[6] = 21;
+		cogs[7] = 24;
+		cogs[8] = 28;
+		cogs[9] = 33;
+		cogs[10] = 39;
+		cogs[11] = 46;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 204 ){  // Garbaruk 12 speed 10-48	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 18;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 42;
+		cogs[11] = 48;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 205 ){  // Garbaruk 12 speed 10-50	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 18;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 42;
+		cogs[11] = 50;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 206 ){  // Leonardi 12 speed 9-46	
+		cogs[0] = 9;
+		cogs[1] = 11;
+		cogs[2] = 13;
+		cogs[3] = 15;
+		cogs[4] = 17;
+		cogs[5] = 20;
+		cogs[6] = 23;
+		cogs[7] = 27;
+		cogs[8] = 31;
+		cogs[9] = 35;
+		cogs[10] = 40;
+		cogs[11] = 46;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 207 ){  // Leonardi 12 speed 9-48	
+		cogs[0] = 9;
+		cogs[1] = 11;
+		cogs[2] = 13;
+		cogs[3] = 15;
+		cogs[4] = 17;
+		cogs[5] = 20;
+		cogs[6] = 23;
+		cogs[7] = 27;
+		cogs[8] = 31;
+		cogs[9] = 35;
+		cogs[10] = 41;
+		cogs[11] = 48;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 208 ){  // Rotor 12 speed 11-36	
+		cogs[0] = 11;
+		cogs[1] = 12;
+		cogs[2] = 13;
+		cogs[3] = 14;
+		cogs[4] = 15;
+		cogs[5] = 17;
+		cogs[6] = 19;
+		cogs[7] = 21;
+		cogs[8] = 24;
+		cogs[9] = 27;
+		cogs[10] = 31;
+		cogs[11] = 36;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 209 ){  // Rotor 12 speed 11-39	
+		cogs[0] = 11;
+		cogs[1] = 12;
+		cogs[2] = 13;
+		cogs[3] = 14;
+		cogs[4] = 15;
+		cogs[5] = 17;
+		cogs[6] = 19;
+		cogs[7] = 21;
+		cogs[8] = 24;
+		cogs[9] = 28;
+		cogs[10] = 33;
+		cogs[11] = 39;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 210 ){  // Rotor 12 speed 11-46	
+		cogs[0] = 11;
+		cogs[1] = 12;
+		cogs[2] = 13;
+		cogs[3] = 15;
+		cogs[4] = 17;
+		cogs[5] = 19;
+		cogs[6] = 22;
+		cogs[7] = 25;
+		cogs[8] = 29;
+		cogs[9] = 34;
+		cogs[10] = 39;
+		cogs[11] = 46;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 211 ){  // Rotor 12 speed 11-52	
+		cogs[0] = 11;
+		cogs[1] = 12;
+		cogs[2] = 13;
+		cogs[3] = 15;
+		cogs[4] = 17;
+		cogs[5] = 19;
+		cogs[6] = 22;
+		cogs[7] = 26;
+		cogs[8] = 31;
+		cogs[9] = 37;
+		cogs[10] = 44;
+		cogs[11] = 52;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 212 ){  // Sunrace 12 speed 10-50	
+		cogs[0] = 10;
+		cogs[1] = 12;
+		cogs[2] = 14;
+		cogs[3] = 16;
+		cogs[4] = 18;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 42;
+		cogs[11] = 50;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 213 ){  // Sunrace 12 speed 11-50	
+		cogs[0] = 11;
+		cogs[1] = 13;
+		cogs[2] = 15;
+		cogs[3] = 17;
+		cogs[4] = 19;
+		cogs[5] = 21;
+		cogs[6] = 24;
+		cogs[7] = 28;
+		cogs[8] = 32;
+		cogs[9] = 36;
+		cogs[10] = 42;
+		cogs[11] = 50;
+		cogs[12] = 999;
+	}
+	if ( cassetteSelection == 214 ){  // Rotor 13 speed 10-36	
+		cogs[0] = 10;
+		cogs[1] = 11;
+		cogs[2] = 12;
+		cogs[3] = 13;
+		cogs[4] = 14;
+		cogs[5] = 15;
+		cogs[6] = 17;
+		cogs[7] = 19;
+		cogs[8] = 21;
+		cogs[9] = 24;
+		cogs[10] = 27;
+		cogs[11] = 31;
+		cogs[12] = 36;
+	}
+	if ( cassetteSelection == 215 ){  // Rotor 13 speed 10-39	
+		cogs[0] = 10;
+		cogs[1] = 11;
+		cogs[2] = 12;
+		cogs[3] = 13;
+		cogs[4] = 14;
+		cogs[5] = 15;
+		cogs[6] = 17;
+		cogs[7] = 19;
+		cogs[8] = 21;
+		cogs[9] = 24;
+		cogs[10] = 28;
+		cogs[11] = 33;
+		cogs[12] = 39;
+	}
+	if ( cassetteSelection == 216 ){  // Rotor 13 speed 10-46	
+		cogs[0] = 10;
+		cogs[1] = 11;
+		cogs[2] = 12;
+		cogs[3] = 13;
+		cogs[4] = 15;
+		cogs[5] = 17;
+		cogs[6] = 19;
+		cogs[7] = 22;
+		cogs[8] = 25;
+		cogs[9] = 29;
+		cogs[10] = 34;
+		cogs[11] = 39;
+		cogs[12] = 46;
+	}
+	if ( cassetteSelection == 217 ){  // Rotor 13 speed 10-52	
+		cogs[0] = 10;
+		cogs[1] = 11;
+		cogs[2] = 12;
+		cogs[3] = 13;
+		cogs[4] = 15;
+		cogs[5] = 17;
+		cogs[6] = 19;
+		cogs[7] = 22;
+		cogs[8] = 26;
+		cogs[9] = 31;
+		cogs[10] = 37;
+		cogs[11] = 44;
+		cogs[12] = 52;
+  }
+  
   debugString = cassetteSelection;
   updateOutput();
 }
