@@ -28,27 +28,34 @@ function writeCookie()
 {
     // save the cookie
     //document.cookie = escape(cookieString);
-    var exdate=new Date();
-    exdate.setDate (exdate.getDate() + exdays);
+
+    // old
+    //var exdate=new Date();
+    //exdate.setDate (exdate.getDate() + exdays);
+
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
 
 	var c_value = escape(cookieString);
 	
-	//	document.cookie = c_name + "=" + c_value  + ((exdays==null) ? "; " : "; expires=" + exdate.toUTCString()) + "; path=/;" + "users_resolution="+ screen.width +"x"+ screen.height +"; unique_id="+ uniqid();
-	document.cookie = c_name + "=" + c_value  + "; path=/;" ;
+    //	document.cookie = c_name + "=" + c_value  + ((exdays==null) ? "; " : "; expires=" + exdate.toUTCString()) + "; path=/;" + "users_resolution="+ screen.width +"x"+ screen.height +"; unique_id="+ uniqid();
+    ourCookeString = c_name + "=" + c_value  + ";" + expires + ";path=/";
+	document.cookie = ourCookeString;
 	
 	// debug
 	if (document.cookie == "")
 	{
-		alert ("Mike's bicycle gear calculator was unable to save a cookie with your configuration.\nPlease verify cookies are enabled.\nIf they are, please email wheelwrightmike@gmail.com with information about the web browser you are using so I can fix the problem.\nThank You.");
+	 	alert ("Mike's bicycle gear calculator was unable to save a cookie with your configuration.\nPlease verify cookies are enabled.\nIf they are, please email wheelwrightmike@gmail.com with information about the web browser you are using so I can fix the problem.\nThank You.");
 	}
 	//alert (document.cookie)
 }
 
 function uniqid()
- {
+{
 	var newDate = new Date;
 	return newDate.getTime();
- }
+}
 
 // builds a cookie from the current screen into var cookiestring
 function buildCookie()

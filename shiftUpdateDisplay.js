@@ -29,11 +29,11 @@ function writexCassette() // write cassette selection to screen - is this used
 {
 	//document.mainForm.cassette.options[cassetteOption].selected = true;
 	// set the correct item in the pull down menu
-	for ( var i = 0; i < document.mainForm.xcassette.options.length; i++ ) 
+	for ( var i = 0; i < document.mainForm.cassettex.options.length; i++ ) 
 	{
-		if ( document.mainForm.xcassette.options[i].value == cassettexSelection ) 
+		if ( document.mainForm.cassettex.options[i].value == cassetteSelection ) 
 		{
-			document.mainForm.xcassette.options[i].selected = true;
+			document.mainForm.cassettex.options[i].selected = true;
 		     break;
 		}
 	}

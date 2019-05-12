@@ -237,6 +237,7 @@ diameter[41]=(230.7*2)/25.4;
 
 
 // wheel sizes --------------------------------------
+// removed leading 0's
 wName[0] = "27 inch";
 wNameA[0]="630 mm bead seat";
 bead[0]=630;
@@ -279,35 +280,35 @@ bead[9]=349;
 //
 
 // tire sizes ------------------------------------
-tName[00] ="18 mm";
-tWidth[00] = 18;
+tName[0] ="18 mm";
+tWidth[0] = 18;
 //
-tName[01] ="19 mm";
-tWidth[01] = 19;
+tName[1] ="19 mm";
+tWidth[1] = 19;
 //
-tName[02] ="20 mm";
-tWidth[02] = 20;
+tName[2] ="20 mm";
+tWidth[2] = 20;
 //
-tName[03] ="21 mm";
-tWidth[03] = 21;
+tName[3] ="21 mm";
+tWidth[3] = 21;
 //
-tName[04] ="22 mm";
+tName[4] ="22 mm";
 tWidth[04] = 22;
 //
-tName[05] ="23 mm";
-tWidth[05] = 23;
+tName[5] ="23 mm";
+tWidth[5] = 23;
 //
-tName[06] ="24 mm";
-tWidth[06] = 24;
+tName[6] ="24 mm";
+tWidth[6] = 24;
 //
-tName[07] ="1 inch / 25 mm";
-tWidth[07] = 25;
+tName[7] ="1 inch / 25 mm";
+tWidth[7] = 25;
 //
-tName[08] ="26 mm";
-tWidth[08] = 26;
+tName[8] ="26 mm";             // SyntaxError: 08 is not a legal ECMA-262 octal constant
+tWidth[8] = 26;                // SyntaxError: 08 is not a legal ECMA-262 octal constant
 //
-tName[09] ="27 mm";
-tWidth[09] = 27;
+tName[9] ="27 mm";             // SyntaxError: 09 is not a legal ECMA-262 octal constant
+tWidth[9] = 27;                // SyntaxError: 09 is not a legal ECMA-262 octal constant
 //
 tName[10] ="1 1/8 inch / 28 mm";
 tWidth[10] = 28;
