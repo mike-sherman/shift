@@ -243,6 +243,8 @@
 // 05/09/2019	update cassettes on index.html (shift.html) and shiftCassettes.html
 // 05/10/2019	browser detectection - Not working - change tab-pane sizes
 //				make combined cassette-crank tab handle 12 cogs
+// 05/11/2019	more cassettes
+//				fix cookies - save / swap
 //
 //
 //  TODO
