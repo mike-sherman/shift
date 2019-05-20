@@ -245,11 +245,16 @@
 //				make combined cassette-crank tab handle 12 cogs
 // 05/11/2019	more cassettes
 //				fix cookies - save / swap
+// 05/20/2019	more cassettes
+//				reverse order of cassettes on pull down = 13 at top
+//				start to standardize the names
 //
 //
 //  TODO
+//	fix URL
+//  sort the cassette list
 //	highlight chainring
-//  turn highlighting off on touch screens
+//  turn highlighting off on touch screens?
 //	generic function for number tables
 //
 // ------------------------------------------------------------------
