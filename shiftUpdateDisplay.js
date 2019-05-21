@@ -449,7 +449,7 @@ function writeURL()
 {
    createBookMarkString();
    // not allowed in current browsers
-   //document.mainForm.pageURL.value = url;
+   document.mainForm.pageURL.value = url;
 }
 
 function updateBrowser()

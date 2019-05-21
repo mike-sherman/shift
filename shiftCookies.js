@@ -61,7 +61,7 @@ function uniqid()
 function buildCookie()
 {
     if ( pageTitle == ""){
-        pageTitle = "None";
+        pageTitle = "None";  //  cassetteName; // "None";
     }
     wheelOption = document.mainForm.wheelsize.options.selectedIndex;    // wheel index
     tireOption = document.mainForm.tire.options.selectedIndex;          // tire index
