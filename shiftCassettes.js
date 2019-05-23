@@ -757,7 +757,7 @@ function setCassette()
      cogs[12] = 999;
    }
     if ( cassetteSelection == 81 ){ // SRAM 10 speed Cassette 11-28 - corrected
-    cassetteName = "SRAM 10 speed Cassette 11-28 - corrected";
+    cassetteName = "SRAM 10 speed Cassette 11-28";
      cogs[0] = 11;
      cogs[1] = 12;
      cogs[2] = 13;
@@ -805,7 +805,7 @@ function setCassette()
      cogs[12] = 999;
    }
     if ( cassetteSelection == 93 ){ // SRAM 10 speed Cassette 12-25 - corrected
-    cassetteName = "SRAM 10 speed Cassette 12-25 - corrected";
+    cassetteName = "SRAM 10 speed Cassette 12-25";
      cogs[0] = 12;
      cogs[1] = 13;
      cogs[2] = 14;
@@ -853,7 +853,7 @@ function setCassette()
      cogs[12] = 999;
    }
     if ( cassetteSelection == 126 ){ // Campagnolo 11 speed Cassette 11-23 - corrected
-    cassetteName = "Campagnolo 11 speed Cassette 11-23 - corrected";
+    cassetteName = "Campagnolo 11 speed Cassette 11-23";
      cogs[0] = 11;
      cogs[1] = 12;
      cogs[2] = 13;
@@ -869,7 +869,7 @@ function setCassette()
      cogs[12] = 999;
    }
     if ( cassetteSelection == 127 ){ // Campagnolo 11 speed Cassette 11-25 - corrected
-    cassetteName = "Campagnolo 11 speed Cassette 11-25 - corrected";
+    cassetteName = "Campagnolo 11 speed Cassette 11-25";
      cogs[0] = 11;
      cogs[1] = 12;
      cogs[2] = 13;
@@ -981,7 +981,7 @@ function setCassette()
      cogs[12] = 999;
    }
     if ( cassetteSelection == 72 ){ // Shimano 11 speed Cassette 11-40 - corrected
-    cassetteName = "Shimano 11 speed Cassette 11-40 - corrected";
+    cassetteName = "Shimano 11 speed Cassette 11-40";
      cogs[0] = 11;
      cogs[1] = 13;
      cogs[2] = 15;
@@ -4307,7 +4307,8 @@ function setCassette()
      cogs[12] = 999;
    }
   
-  // lastCassetteName = cassetteName;
+  proposedTitle = cassetteName;
+  setTitle();
   debugString = cassetteSelection;
   updateOutput();
 }

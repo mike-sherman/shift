@@ -249,6 +249,7 @@
 //				reverse order of cassettes on pull down = 13 at top
 //				start to standardize the names
 // 05/21/2019	(v6.05) fix URL code
+// 05/23/2019	(v6.06) automatically set a page title when the cassette is changed
 //
 //
 //  TODO
@@ -331,7 +332,9 @@ var p1 = 81;
 var p2 = 80;
 var w2 = 800;
 
-var pageTitle = "";
+var pageTitle = "Campagnolo 10-speed  12-25";
+var proposedTitle = "";
+var lastTitle = "Campagnolo 10-speed  12-25";
 
 var cookieString;
 var defaultCookie="101XxX4XxX10XxX170XxX10XxX8XxX8XxX2XxX46XxX50XxX999XxX14XxX16XxX18XxX20XxX22XxX999XxX999XxX999XxX999XxX999XxX999XxXCoppiXxX90XxX0XxX80XxX90XxXshowXxXnoXxX"
@@ -800,4 +803,12 @@ function BrowserDetection() {
 //    else if (navigator.userAgent.search("Opera") & gt; = 0) {
 //        browserType = "OP";
 //    }
+}
+
+// set the title if the user changes the cassette
+function setTitle () {
+	//if (pageTitle == lastTitle) { // the title has not been changed by the user
+		pageTitle = proposedTitle;
+		lastTitle = pageTitle;
+	//}
 }

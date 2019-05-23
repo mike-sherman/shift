@@ -199,6 +199,8 @@ function cogPlus ( whichCog )
 		}
    }
    cassetteSelection = 0;	// changed something, not a stock cassette
+   proposedTitle = "Custom";
+   setTitle();
    updateOutput();
 }
 
@@ -349,6 +351,8 @@ function cogMinus ( whichCog )
 		}
    }
    cassetteSelection = 0;	// changed something, not a stock cassette
+   proposedTitle = "Custom";
+   setTitle();
    updateOutput();
 }
 
@@ -442,6 +446,8 @@ function cogX ( whichCog )
       break;
    }
    cassetteSelection = 0;	// changed something, not a stock cassette
+   proposedTitle = "Custom";
+   setTitle();
    updateOutput();
 }
 

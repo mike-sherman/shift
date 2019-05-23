@@ -86,7 +86,9 @@ function readCogs()
      }
    }
 
-   cassetteSelection = 0;	// changed something, not a stock cassette
+	 cassetteSelection = 0;	// changed something, not a stock cassette
+	 proposedTitle = "Custom";
+   setTitle();
    updateOutput();
 }  
 
@@ -181,7 +183,9 @@ function readxCogs()
      }
    }
 
-   cassetteSelection = 0;	// changed something, not a stock cassette
+	 cassetteSelection = 0;	// changed something, not a stock cassette
+	 proposedTitle = "Custom";
+   setTitle();
    updateOutput();
 }  
 
