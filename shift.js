@@ -253,6 +253,7 @@
 //
 //
 //  TODO
+//  when loading from URL, select the correct cassette
 //  sort the cassette list
 //	highlight chainring
 //  turn highlighting off on touch screens?
