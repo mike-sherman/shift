@@ -679,10 +679,10 @@ function processArgs()		// read arguments attched to our URL
 					case "C10":
 						cogs[10] = parseInt(val);
 						break;
-					case "C10":
+					case "C11":
 						cogs[11] = parseInt(val);
 						break;
-					case "C10":
+					case "C12":
 						cogs[12] = parseInt(val);
 						break;
 
@@ -691,6 +691,9 @@ function processArgs()		// read arguments attched to our URL
 						break;
 					case "WI":		// index into wheel size table
 						wheelIndex = parseInt(val);
+						break;
+					case "TI":		// index into tire size table
+						tireIndex = parseInt(val);
 						break;
 					case "CR":		// crank length
 						crank = parseInt(val);

@@ -23,7 +23,7 @@ function createBookMarkString()
 		tempTitle = tempTitle.replace(" ", "%20");
 	}
 	title="Gear Calculator - " + pageTitle;
-	urlString = "?R0=" + rings[0] + "&R1=" + rings[1] + "&R2=" + rings[2] + "&C0=" + cogs[0] + "&C1=" + cogs[1] + "&C2=" + cogs[2] + "&C3=" + cogs[3] + "&C4=" + cogs[4] + 	"&C5=" + cogs[5] + "&C6=" + cogs[6] + "&C7=" + cogs[7] + "&C8=" + cogs[8] + "&C9=" + cogs[9] + 	"&C10=" + cogs[10] + "&C11=" + cogs[11] + "&C12=" + cogs[12] + "&CAS=" + cassetteSelection + "&WI=" + wheelIndex + 	"&WO=" + wheelOption + "&TO=" + tireOption + "&DO=" + deflectOption + "&CR=" + crank + 	"&RT=" + rolloutType + "&ST=" + speedType + "&RPM=" + RPM + "&SRT=" + speedRangeType + "&lRPM=" + lRPM + "&hRMP=" + hRPM + "&G=" + showgrid + "&S=" + sortgears + "&TITLE=" + pageTitle + "&HL=" + highlightON + "&DO=" + displayOrder;
+	urlString = "?R0=" + rings[0] + "&R1=" + rings[1] + "&R2=" + rings[2] + "&C0=" + cogs[0] + "&C1=" + cogs[1] + "&C2=" + cogs[2] + "&C3=" + cogs[3] + "&C4=" + cogs[4] + 	"&C5=" + cogs[5] + "&C6=" + cogs[6] + "&C7=" + cogs[7] + "&C8=" + cogs[8] + "&C9=" + cogs[9] + 	"&C10=" + cogs[10] + "&C11=" + cogs[11] + "&C12=" + cogs[12] + "&CAS=" + cassetteSelection + "&WI=" + wheelIndex + "&TI=" + tireIndex + "&DO=" + deflectOption + "&CR=" + crank + 	"&RT=" + rolloutType + "&ST=" + speedType + "&RPM=" + RPM + "&SRT=" + speedRangeType + "&lRPM=" + lRPM + "&hRMP=" + hRPM + "&G=" + showgrid + "&S=" + sortgears + "&TITLE=" + pageTitle + "&HL=" + highlightON + "&DO=" + displayOrder;
 	//urlString = "";
 
 //	url="https://mike-sherman.github.io/shift/shift.html" + urlString;
