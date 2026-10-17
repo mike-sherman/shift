@@ -11,7 +11,7 @@ function sheldonRatiosG()
 {
 	var cw = 45;	// grid cell width   -   GRID CELLS 45 wide X 20
 	var ch = 20;	// grid cell height
-	var divw = 600;	// width of our <dev>
+	var divw = 700;	// width of our <dev>
 	var leftside;	// where the left side of the table is
 	var pad = 8; 	// padding on the left of number cells ~ 1 character width
 	var cellpad;	// variable padding
@@ -51,10 +51,10 @@ function sheldonRatiosG()
 				//
 				gaintbl2.setColor(textcolor);
 			}
-			gaintbl.drawString (cogs[i], leftside + cw + (i * cw) + cellpad, row );
+			gaintbl.drawString (cogLabel(i), leftside + cw + (i * cw) + cellpad, row );
 			gaintbl.setColor(textcolor);
 			//
-			gaintbl2.drawString (cogs[i], leftside + cw + (i * cw) + cellpad, row );
+			gaintbl2.drawString (cogLabel(i), leftside + cw + (i * cw) + cellpad, row );
 			gaintbl2.setColor(textcolor);
 		}
 		else	// selectable display order - 1 = large to small
@@ -71,10 +71,10 @@ function sheldonRatiosG()
 				//
 				gaintbl2.setColor(textcolor);
 			}
-			gaintbl.drawString (cogs[numCogs-1-i], leftside + cw + (i * cw) + cellpad, row );
+			gaintbl.drawString (cogLabel(numCogs-1-i), leftside + cw + (i * cw) + cellpad, row );
 			gaintbl.setColor(textcolor);
 			//
-			gaintbl2.drawString (cogs[numCogs-1-i], leftside + cw + (i * cw) + cellpad, row );
+			gaintbl2.drawString (cogLabel(numCogs-1-i), leftside + cw + (i * cw) + cellpad, row );
 			gaintbl2.setColor(textcolor);
 		}
 	}

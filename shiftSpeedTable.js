@@ -10,7 +10,7 @@ function speedTableG()
 {
 	var cw = 45;	// grid cell width   -   GRID CELLS 45 wide X 20
 	var ch = 20;	// grid cell height
-	var divw = 600;	// width of our <dev>
+	var divw = 700;	// width of our <dev>
 	var leftside;	// where the left side of the table is
 	var pad = 8; 	// padding on the left of number cells ~ 1 character width
 	var cellpad;	// variable padding
@@ -41,7 +41,7 @@ function speedTableG()
 	cellpad = pad * 2;
 	row = 0;
 	for ( i=0; i<numCogs; i++){
-		speedtbl.drawString (cogs[i], leftside + cw + (i * cw) + cellpad, row );
+		speedtbl.drawString (cogLabel(i), leftside + cw + (i * cw) + cellpad, row );
 	}
 	// draw the lines
 	speedtbl.drawLine ( leftside, ch, leftside + ((numCogs + 1) * cw), ch );		// horz line

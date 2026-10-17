@@ -265,6 +265,8 @@
 //  display differences between browsers in html spacing
 //  hightlight ring is not implemented in the display code
 //
+// 10/17/2026	internal gear hubs (shiftHubs.js) - fixed sprocket and internal ratios,
+//				14 cog slots, hub + sprocket saved in cookies and bookmarks
 
 // - clean up updateOutput() vs in cookies
 // - bug? - lines in all tables is reverse order between graphical and ascii versions 
@@ -397,6 +399,11 @@ cogs[9] = 25;
 cogs[10] = 999;
 cogs[11] = 999;
 cogs[12] = 999;
+cogs[13] = 999;
+// internal gear hub - see shiftHubs.js
+var sprocket = 999;				// hub sprocket teeth, 999 = no hub
+var hubIndex = 0;				// 0 = none (derailleur), 99 = custom, otherwise an index into hubTable
+var hubRatios = new Array();	// internal ratios of the selected hub, top gear first
 var highlightON = 1;
 highlightGear = 99;
 highlightRing = 99;
@@ -425,6 +432,7 @@ function initGears()
 	// add cookie check here
 	setLinkSrc('webfx')
 	detectMobile()
+	populateHubSelects();
 	processArgs();
 	updateOutput();
 	if (readBookmark == 1) //if there are any arguments - a SLOPPY to decide if we should pop up the message
@@ -490,6 +498,7 @@ function updateOutput()
 	writeCogs();
 	writexRings();	// combined cassettes & rings tab
    	writexCogs();	// combined cassettes & rings tab
+   	writeHub();		// internal gear hub controls on both tabs
    	writeCrank();
    	writeWheel();
    	calcGears();
@@ -542,12 +551,12 @@ function calcGears()
 
 	for (j=0; j<numRings; j++){
 		for( i=0; i<numCogs; i++){
-			gear[(j*numCogs)+i] = (rings[j]/cogs[i]) * numCogs -i;
+			gear[(j*numCogs)+i] = (rings[j]/effectiveCog(i)) * numCogs -i;
 			// inchgears
-			value[(j*numCogs)+i] = (rings[j] / cogs[i]) * wheelSize;
+			value[(j*numCogs)+i] = (rings[j] / effectiveCog(i)) * wheelSize;
 			ring[(j*numCogs)+i] = rings[j];
 			// Sheldon's ratios
-			ratio[(j*numCogs)+i] = radiusRatio * rings[j] / cogs[i];
+			ratio[(j*numCogs)+i] = radiusRatio * rings[j] / effectiveCog(i);
 			// rollout
 			rollout[(j*numCogs)+i] = value[(j*numCogs)+i] * Math.PI;
 			// speed
@@ -604,6 +613,7 @@ function RPMrangeCheck()
 
 function processArgs()		// read arguments attched to our URL
 {
+	var hubRatioArg = "";	// HR= argument, resolved after the loop
 	var query = window.location.search.substring(1);
 	var parms = query.split('&');
 	if (parms.length > 1) //if there are any arguments
@@ -625,6 +635,10 @@ function processArgs()		// read arguments attched to our URL
 		cogs[10] = 999;
 		cogs[11] = 999;
 		cogs[12] = 999;
+		cogs[13] = 999;
+		sprocket = 999;
+		hubIndex = 0;
+		hubRatios = new Array();
 
 		// then go through the list of arguments and load them
 		for (var i=0; i<parms.length; i++) 
@@ -679,18 +693,33 @@ function processArgs()		// read arguments attched to our URL
 					case "C10":
 						cogs[10] = parseInt(val);
 						break;
-					case "C10":
+					case "C11":
 						cogs[11] = parseInt(val);
 						break;
-					case "C10":
+					case "C12":
 						cogs[12] = parseInt(val);
 						break;
+					case "C13":
+						cogs[13] = parseInt(val);
+						break;
 
+					case "SPR":		// internal gear hub sprocket
+						sprocket = parseInt(val);
+						break;
+					case "HUB":		// internal gear hub - index into hubTable
+						hubIndex = parseInt(val);
+						break;
+					case "HR":		// internal gear hub ratios, comma separated
+						hubRatioArg = val;
+						break;
 					case "CAS":		// index of the selected cassette
 						cassetteSelection = parseInt(val);
 						break;
 					case "WI":		// index into wheel size table
 						wheelIndex = parseInt(val);
+						break;
+					case "TI":		// index into tire size table
+						tireIndex = parseInt(val);
 						break;
 					case "CR":		// crank length
 						crank = parseInt(val);
@@ -731,6 +760,27 @@ function processArgs()		// read arguments attched to our URL
 						displayOrder = val;
 						break;
 				}
+			}
+		}
+		// resolve the internal gear hub, if any
+		if (isNaN(hubIndex) || hubIndex < 0)
+		{
+			hubIndex = 0;
+		}
+		if (hubIndex > 0)
+		{
+			hubRatios = parseHubRatios(hubRatioArg);
+			if (hubRatios.length == 0)
+			{
+				loadHubRatios(hubIndex);	// stock hub given by index only
+			}
+			if (hubRatios.length == 0)
+			{
+				hubIndex = 0;				// unknown hub and no ratios
+			}
+			else if (isNaN(sprocket) || sprocket < 1 || sprocket > 998)
+			{
+				sprocket = defaultSprocket(hubIndex);
 			}
 		}
 		readBookmark = 1; //if there are any arguments - a SLOPPY to decide if we should pop up the message

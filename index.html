@@ -20,6 +20,7 @@
 <script type="text/javascript" src="shiftRollout.js"></script>
 <script type="text/javascript" src="shiftWheels.js"></script>
 <script type="text/javascript" src="shiftCassettes.js"></script>
+<script type="text/javascript" src="shiftHubs.js"></script>
 <script type="text/javascript" src="shiftCookies.js"></script>
 <script type="text/javascript" src="shiftBookmarks.js"></script>
 <script type="text/javascript" src="shiftSpeedTable.js"></script>
@@ -178,6 +179,9 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 	  	<TD ALIGN=CENTER><INPUT TYPE=text NAME="cog12" SIZE=2 VALUE=999 onchange="readCogs()"
 				onmouseover="gearHighlight('12')" onmouseout="gearHighlight('99')">
 				</TD>
+	  	<TD ALIGN=CENTER><INPUT TYPE=text NAME="cog13" SIZE=2 VALUE=999 onchange="readCogs()"
+				onmouseover="gearHighlight('13')" onmouseout="gearHighlight('99')">
+			</TD>
 			<TD ALIGN=CENTER>
 				<INPUT TYPE="button" VALUE="Save"  onClick="saveSet()">
 			</TD>
@@ -279,12 +283,20 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 				onmouseover="gearHighlight('11')" onmouseout="gearHighlight		('99')">
 		</TD>
 	  	<TD ALIGN=CENTER COLSPAN=1>
-	   		<INPUT TYPE="button" VALUE=" - "  onClick="cogMinus('cog10')" 
+	   		<INPUT TYPE="button" VALUE=" - "  onClick="cogMinus('cog12')\" 
 				onmouseover="gearHighlight('12')" onmouseout="gearHighlight('99')">
 	   		<INPUT TYPE="button" VALUE=" + "  onClick="cogPlus('cog12')" 
 				onmouseover="gearHighlight('12')" onmouseout="gearHighlight('99')"><br>
 	   		<INPUT TYPE="button" VALUE="  X  "  onClick="cogX('cog12')" 
 				onmouseover="gearHighlight('12')" onmouseout="gearHighlight		('99')">
+		</TD>
+	  	<TD ALIGN=CENTER COLSPAN=1>
+	   		<INPUT TYPE="button" VALUE=" - "  onClick="cogMinus('cog13')" 
+				onmouseover="gearHighlight('13')" onmouseout="gearHighlight('99')">
+	   		<INPUT TYPE="button" VALUE=" + "  onClick="cogPlus('cog13')" 
+				onmouseover="gearHighlight('13')" onmouseout="gearHighlight('99')"><br>
+	   		<INPUT TYPE="button" VALUE="  X  "  onClick="cogX('cog13')" 
+				onmouseover="gearHighlight('13')" onmouseout="gearHighlight('99')">
 		</TD>
 		<TD ALIGN=CENTER>
 			<INPUT TYPE="button" VALUE="Recall"  onClick="readSet()"><br>
@@ -606,6 +618,16 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 	    	</SELECT>
 			</TD>
 	</TR>
+	<!-- internal gear hub - see shiftHubs.js -->
+	<TR>
+	  	<TD COLSPAN=15 ALIGN=center>
+	  		Internal Gear Hub:
+	    	<SELECT NAME="hub" onChange="selectHub()"></SELECT>
+	    	&nbsp;Hub Sprocket:
+	  	    <INPUT TYPE=text NAME="sprocket" SIZE=2 onchange="readSprocket()">
+	  		<br><font size="-1">With a hub selected the boxes above show the hub's internal ratios, top gear first. Choose Custom hub to enter your own.</font>
+	  	</TD>
+	</TR>
 </TABLE>
 </div>
 
@@ -906,6 +928,9 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 			<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx12" SIZE=2 VALUE=999 onchange="readxCogs()"
 				onmouseover="gearHighlight('12')" onmouseout="gearHighlight('99')">
 			</TD>
+			<TD ALIGN=CENTER><INPUT TYPE=text NAME="cogx13" SIZE=2 VALUE=999 onchange="readxCogs()"
+				onmouseover="gearHighlight('13')" onmouseout="gearHighlight('99')">
+			</TD>
 			 
 			<TD> </TD>
 			  
@@ -1015,6 +1040,13 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 					onmouseover="gearHighlight('12')" onmouseout="gearHighlight('99')"><br>
 				<INPUT TYPE="button" VALUE="  X  "  onClick="cogX('cogx12')" 
 					onmouseover="gearHighlight('12')" onmouseout="gearHighlight('99')"></TD>
+			<TD ALIGN=CENTER COLSPAN=1>
+				<INPUT TYPE="button" VALUE=" - "  onClick="cogMinus('cogx13')" 
+					onmouseover="gearHighlight('13')" onmouseout="gearHighlight('99')">
+				<INPUT TYPE="button" VALUE=" + "  onClick="cogPlus('cogx13')" 
+					onmouseover="gearHighlight('13')" onmouseout="gearHighlight('99')"><br>
+				<INPUT TYPE="button" VALUE="  X  "  onClick="cogX('cogx13')" 
+					onmouseover="gearHighlight('13')" onmouseout="gearHighlight('99')"></TD>
 			<TD> </TD>
 
 			<TD ALIGN=CENTER COLSPAN=1>
@@ -1362,7 +1394,17 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 				<a href="http://sheldonbrown.com/gloss_ca-g.html#capacity" target="_blank">Capacity</a>: 	
 				<INPUT TYPE=text NAME="frontcapx" SIZE=2 style="border: none" readonly>
 			 </TD>
-		</TR>		
+		</TR>
+	<!-- internal gear hub - see shiftHubs.js -->
+	<TR>
+	  	<TD COLSPAN=19 ALIGN=center>
+	  		Internal Gear Hub:
+	    	<SELECT NAME="hubx" onChange="selectxHub()"></SELECT>
+	    	&nbsp;Hub Sprocket:
+	  	    <INPUT TYPE=text NAME="sprocketx" SIZE=2 onchange="readxSprocket()">
+	  		<br><font size="-1">With a hub selected the boxes above show the hub's internal ratios, top gear first. Choose Custom hub to enter your own.</font>
+	  	</TD>
+	</TR>		
 	</TABLE>
 </div>
 
@@ -1426,7 +1468,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 		<input type="radio" name="rolloutButton" onclick="readRolloutType()"checked >
 			<font color="#000099">Meters</font>
 		<br>
-		<div id="rollCanvas" style="position:relative;height:100px;width:600px;">
+		<div id="rollCanvas" style="position:relative;height:100px;width:700px;">
 		</div>		
 	</div>
 
@@ -1434,7 +1476,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 		<!-- <br><p><!-- only needed on firefox -->
 		<h2 class="tab">Gain</h2>
 			<font color="#000099", size="3">Gain Ratio Chart<br></font>
-		<div id="gainCanvas" style="position:relative;height:100px;width:600px;">
+		<div id="gainCanvas" style="position:relative;height:100px;width:700px;">
 		</div>		
 	</div>
 
@@ -1449,7 +1491,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 		<input type="radio" name="speedButton" onclick="readSpeedType()" checked><font color="#000099">mph</font>
 		<input type="radio" name="speedButton" onclick="readSpeedType()"><font color="#000099">kph</font>
 			<br>
-		<div id="speedCanvas" style="position:relative;height:100px;width:600px;">	
+		<div id="speedCanvas" style="position:relative;height:100px;width:700px;">	
 		</div>
 	</div>	
 	
@@ -1495,11 +1537,11 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
 		<input type="radio" name="rolloutButton2" onclick="readRolloutType2()"checked >
 			<font color="#000099">Meters</font>
 		<br>
-		<div id="rollCanvas2" style="position:relative;height:100px;width:600px;">
+		<div id="rollCanvas2" style="position:relative;height:100px;width:700px;">
 		</div>
 
 		<font color="#000099", size="3">Gain Ratio<br></font>
-		<div id="gainCanvas2" style="position:relative;height:100px;width:600px;">
+		<div id="gainCanvas2" style="position:relative;height:100px;width:700px;">
 		</div>
 	</div>
 

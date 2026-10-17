@@ -79,7 +79,7 @@ function semiLogG()
 		// for each cog
 		for ( i=numCogs-1; i>-1; i-- ){
 			with(Math)
-			l = ((log(((rings[j] / cogs[i]) * wheelSize)) - num1) * (w2/(num2-num1))) +1;
+			l = ((log(((rings[j] / effectiveCog(i)) * wheelSize)) - num1) * (w2/(num2-num1))) +1;
 			logtbl.setStroke(2);
 			//
 			logtbl2.setStroke(2);

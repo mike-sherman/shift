@@ -103,7 +103,11 @@ function buildCookie()
     lRPM + "XxX" +
     hRPM + "XxX" +
     showgrid + "XxX" +
-    sortgears + "XxX";
+    sortgears + "XxX" +
+    cogs[13] + "XxX" +
+    hubIndex + "XxX" +
+    sprocket + "XxX" +
+    hubRatiosString() + "XxX";
 
     debugString = cookieString;
 }
@@ -163,6 +167,29 @@ function readSet()
 			hRPM = parseInt(crumbs[30]);
 			showgrid = (crumbs[31]);
 			sortgears = (crumbs[32]);
+			// a cookie from an older layout can leave these undefined - keep the chart code sane
+			if (showgrid != "show" && showgrid != "hide") showgrid = "show";
+			if (sortgears != "yes" && sortgears != "no") sortgears = "no";
+			// added with internal gear hubs - older cookies stop at crumbs[32]
+			cogs[13] = parseInt(crumbs[33]);
+			if (isNaN(cogs[13])) cogs[13] = 999;
+			hubIndex = parseInt(crumbs[34]);
+			if (isNaN(hubIndex)) hubIndex = HUB_NONE;
+			sprocket = parseInt(crumbs[35]);
+			if (isNaN(sprocket)) sprocket = 999;
+			hubRatios = parseHubRatios(crumbs[36]);
+			if (hubActive() && hubRatios.length == 0)
+			{
+				loadHubRatios(hubIndex);	// stock hub saved by index only
+				if (hubRatios.length == 0)
+				{
+					hubIndex = HUB_NONE;
+				}
+			}
+			if (hubActive() && (sprocket < 1 || sprocket > 998))
+			{
+				sprocket = defaultSprocket(hubIndex);
+			}
   
 			writeTitle();
             writeCassette();

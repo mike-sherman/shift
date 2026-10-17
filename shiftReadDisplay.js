@@ -9,185 +9,56 @@
 // These functions read the current value of all user inputs on the screen.
 
 // read the cog values from the screen
-function readCogs()
+// prefix is "cog" for the Cassette tab, "cogx" for the Cassette & Rings tab
+function readCogBoxes(prefix)
 {
-	if (document.mainForm.cog0.value < 1 || document.mainForm.cog0.value > 999)
-	{
-		cogs[0] = 999;
-	} else {
-		cogs[0]= parseInt(document.mainForm.cog0.value);
+	var i, v;
+	if (hubActive())
+	{	// the boxes hold the hub's internal ratios
+		hubRatios = new Array();
+		for (i = 0; i < 14; i++)
+		{
+			v = parseFloat(document.mainForm[prefix + i].value);
+			if (!isNaN(v) && v > 0 && v < 100)
+			{
+				hubRatios[hubRatios.length] = v;
+			}
+		}
+		hubRatios.sort(compareNumDesc);
+		if (hubRatios.length == 0)
+		{
+			hubRatios[0] = 1.000;
+		}
+		hubIndex = HUB_CUSTOM;		// changed something, not a stock hub
+		proposedTitle = "Custom hub";
 	}
-	if (document.mainForm.cog1.value < 1 || document.mainForm.cog1.value > 999)
-	{
-		cogs[1] = 999;
-	} else {
-		cogs[1]= parseInt(document.mainForm.cog1.value);
+	else
+	{	// the boxes hold cog sizes
+		for (i = 0; i < 14; i++)
+		{
+			v = parseInt(document.mainForm[prefix + i].value);
+			if (isNaN(v) || v < 1 || v > 998)
+			{
+				v = 999;	// empty, zero or out of range = no cog
+			}
+			cogs[i] = v;
+		}
+		cassetteSelection = 0;	// changed something, not a stock cassette
+		proposedTitle = "Custom";
 	}
-	if (document.mainForm.cog2.value < 1 || document.mainForm.cog2.value > 999)
-	{
-		cogs[2] = 999;
-	} else {
-		cogs[2]= parseInt(document.mainForm.cog2.value);
-	}
-	if (document.mainForm.cog3.value < 1 || document.mainForm.cog3.value > 999)
-	{
-		cogs[3] = 999;
-	} else {
-		cogs[3]= parseInt(document.mainForm.cog3.value);
-	}
-	if (document.mainForm.cog4.value < 1 || document.mainForm.cog4.value > 999)
-	{
-		cogs[4] = 999;
-	} else {
-		cogs[4]= parseInt(document.mainForm.cog4.value);
-	}
-	if (document.mainForm.cog5.value < 1 || document.mainForm.cog5.value > 999)
-	{
-		cogs[5] = 999;
-	} else {
-		cogs[5]= parseInt(document.mainForm.cog5.value);
-	}
-	if (document.mainForm.cog6.value < 1 || document.mainForm.cog6.value > 999)
-	{
-		cogs[6] = 999;
-	} else {
-		cogs[6]= parseInt(document.mainForm.cog6.value);
-	}
-	if (document.mainForm.cog7.value < 1 || document.mainForm.cog7.value > 999)
-	{
-		cogs[7] = 999;
-	} else {
-		cogs[7]= parseInt(document.mainForm.cog7.value);
-	}
-	if (document.mainForm.cog8.value < 1 || document.mainForm.cog8.value > 999)
-	{
-		cogs[8] = 999;
-	} else {
-		cogs[8]= parseInt(document.mainForm.cog8.value);
-	}
-	if (document.mainForm.cog9.value < 1 || document.mainForm.cog9.value > 999)
-	{
-		cogs[9] = 999;
-	} else {
-		cogs[9]= parseInt(document.mainForm.cog9.value);
-	}
-	if (document.mainForm.cog10.value < 1 || document.mainForm.cog10.value > 999)
-	{
-		cogs[10] = 999;
-	} else {
-		cogs[10]= parseInt(document.mainForm.cog10.value);
-	}
-   // fix empty slots and zero slots
+	setTitle();
+	updateOutput();
+}
 
-   for ( i=0; i<12; i++){
-     if ((cogs[i] == "") || (cogs[i] == 0)) 
-	 {
-       cogs[i] = 999;
-     }
-   }
-
-	 cassetteSelection = 0;	// changed something, not a stock cassette
-	 proposedTitle = "Custom";
-   setTitle();
-   updateOutput();
-}  
-
-// read the cog values from the screen on the Cassette & Ring tab
-function readxCogs()
+function readCogs()		// Cassette tab
 {
-	if (document.mainForm.cogx0.value < 1 || document.mainForm.cogx0.value > 999)
-	{
-		cogs[0] = 999;
-	} else {
-		cogs[0]= parseInt(document.mainForm.cogx0.value);
-	}
-	if (document.mainForm.cogx1.value < 1 || document.mainForm.cogx1.value > 999)
-	{
-		cogs[1] = 999;
-	} else {
-		cogs[1]= parseInt(document.mainForm.cogx1.value);
-	}
-	if (document.mainForm.cogx2.value < 1 || document.mainForm.cogx2.value > 999)
-	{
-		cogs[2] = 999;
-	} else {
-		cogs[2]= parseInt(document.mainForm.cogx2.value);
-	}
-	if (document.mainForm.cogx3.value < 1 || document.mainForm.cogx3.value > 999)
-	{
-		cogs[3] = 999;
-	} else {
-		cogs[3]= parseInt(document.mainForm.cogx3.value);
-	}
-	if (document.mainForm.cogx4.value < 1 || document.mainForm.cogx4.value > 999)
-	{
-		cogs[4] = 999;
-	} else {
-		cogs[4]= parseInt(document.mainForm.cogx4.value);
-	}
-	if (document.mainForm.cogx5.value < 1 || document.mainForm.cogx5.value > 999)
-	{
-		cogs[5] = 999;
-	} else {
-		cogs[5]= parseInt(document.mainForm.cogx5.value);
-	}
-	if (document.mainForm.cogx6.value < 1 || document.mainForm.cogx6.value > 999)
-	{
-		cogs[6] = 999;
-	} else {
-		cogs[6]= parseInt(document.mainForm.cogx6.value);
-	}
-	if (document.mainForm.cogx7.value < 1 || document.mainForm.cogx7.value > 999)
-	{
-		cogs[7] = 999;
-	} else {
-		cogs[7]= parseInt(document.mainForm.cogx7.value);
-	}
-	if (document.mainForm.cogx8.value < 1 || document.mainForm.cogx8.value > 999)
-	{
-		cogs[8] = 999;
-	} else {
-		cogs[8]= parseInt(document.mainForm.cogx8.value);
-	}
-	if (document.mainForm.cogx9.value < 1 || document.mainForm.cogx9.value > 999)
-	{
-		cogs[9] = 999;
-	} else {
-		cogs[9]= parseInt(document.mainForm.cogx9.value);
-	}
-	if (document.mainForm.cogx10.value < 1 || document.mainForm.cogx10.value > 999)
-	{
-		cogs[10] = 999;
-	} else {
-		cogs[10]= parseInt(document.mainForm.cogx10.value);
-	}
-	if (document.mainForm.cogx11.value < 1 || document.mainForm.cogx11.value > 999)
-	{
-		cogs[11] = 999;
-	} else {
-		cogs[11]= parseInt(document.mainForm.cogx11.value);
-	}
-	if (document.mainForm.cogx12.value < 1 || document.mainForm.cogx12.value > 999)
-	{
-		cogs[12] = 999;
-	} else {
-		cogs[12]= parseInt(document.mainForm.cogx12.value);
-	}
+	readCogBoxes("cog");
+}
 
-   // fix empty slots and zero slots
-
-   for ( i=0; i<12; i++){
-     if ((cogs[i] == "") || (cogs[i] == 0)) 
-	 {
-       cogs[i] = 999;
-     }
-   }
-
-	 cassetteSelection = 0;	// changed something, not a stock cassette
-	 proposedTitle = "Custom";
-   setTitle();
-   updateOutput();
-}  
+function readxCogs()	// Cassette & Rings tab
+{
+	readCogBoxes("cogx");
+}
 
 
 // read the rings from the screen

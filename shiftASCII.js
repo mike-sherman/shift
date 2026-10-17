@@ -29,7 +29,7 @@ function gearChart()
 	outputString0 = outputString0 + "     ";
 	// fill the lines
 	for ( i=0; i<numCogs; i++){
-		outputString1 = outputString1 + "    " + cogs[i];
+		outputString1 = outputString1 + cogLabelPad(i, 6);
 		tmps = numCogs - i;
 		//if ( tmps > 9 ){
 		//	tmps = tmps / 10;
@@ -116,7 +116,7 @@ function rolloutTable()
 	}
 	outputString1 = outputString1 + "    |";
 	for ( i=0; i<numCogs; i++){
-		outputString1 = outputString1 + "     " + cogs[i];
+		outputString1 = outputString1 + cogLabelPad(i, 7);
 	}
 
 	// draw the line
@@ -199,7 +199,7 @@ function speedTable()
 	// draw the line
 	outputString1 = outputString1 + "    |";
 	for ( i=0; i<numCogs; i++){
-		outputString1 = outputString1 + "    " + cogs[i];
+		outputString1 = outputString1 + cogLabelPad(i, 6);
 	}
 
 	// draw the line
@@ -264,7 +264,7 @@ function sheldonRatios()
 	}
 	outputString1 = outputString1 + "    |";
 	for ( i=0; i<numCogs; i++){
-		outputString1 = outputString1 + "    " + cogs[i];
+		outputString1 = outputString1 + cogLabelPad(i, 6);
 	}
 	
 	// draw the line

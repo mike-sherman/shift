@@ -178,10 +178,10 @@ function speedRangeTableG()
 							speedrtbl2.setColor(red);
 						}
 						speedrtbl.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-						speedrtbl.drawString (cogs[i], lowposition-20,line-rowheight-5);	// label
+						speedrtbl.drawString (speedLabel(i), lowposition-20,line-rowheight-5);	// label
 						//
 						speedrtbl2.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-						speedrtbl2.drawString (cogs[i], lowposition-20,line-rowheight-5);	// label
+						speedrtbl2.drawString (speedLabel(i), lowposition-20,line-rowheight-5);	// label
 					}
 					if (j==1) //  second row - black
 					{
@@ -198,10 +198,10 @@ function speedRangeTableG()
 							speedrtbl2.setColor(black);
 						}
 						speedrtbl.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-						speedrtbl.drawString (cogs[i], lowposition-20,line-rowheight-5);	// label
+						speedrtbl.drawString (speedLabel(i), lowposition-20,line-rowheight-5);	// label
 						//
 						speedrtbl2.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-						speedrtbl2.drawString (cogs[i], lowposition-20,line-rowheight-5);	// label
+						speedrtbl2.drawString (speedLabel(i), lowposition-20,line-rowheight-5);	// label
 					}
 					if (j==2) // third row - was orange
 					{
@@ -218,10 +218,10 @@ function speedRangeTableG()
 							speedrtbl2.setColor(blue);
 						}
 						speedrtbl.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-						speedrtbl.drawString (cogs[i], lowposition-20,line-rowheight-5);	// label
+						speedrtbl.drawString (speedLabel(i), lowposition-20,line-rowheight-5);	// label
 						//
 						speedrtbl2.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-						speedrtbl2.drawString (cogs[i], lowposition-20,line-rowheight-5);	// label
+						speedrtbl2.drawString (speedLabel(i), lowposition-20,line-rowheight-5);	// label
 					}
 					line = line - rowheight;
 				}	// end of for each cog
@@ -251,10 +251,10 @@ function speedRangeTableG()
 					speedrtbl2.setColor(red);
 				}
 				speedrtbl.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-				speedrtbl.drawString (cogs[i], lowposition-20,line-rowheight-5);	// label
+				speedrtbl.drawString (speedLabel(i), lowposition-20,line-rowheight-5);	// label
 				//
 				speedrtbl2.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-				speedrtbl2.drawString (cogs[i], lowposition-20,line-rowheight-5);	// label
+				speedrtbl2.drawString (speedLabel(i), lowposition-20,line-rowheight-5);	// label
 				line = line - rowheight;
 			}
 			j++;
@@ -305,10 +305,10 @@ function speedRangeTableG()
 						}
 					}
 					speedrtbl.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-					speedrtbl.drawString (cogs[i], lowposition-20,line-rowheight-5);	// label
+					speedrtbl.drawString (speedLabel(i), lowposition-20,line-rowheight-5);	// label
 					//
 					speedrtbl2.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-					speedrtbl2.drawString (cogs[i], lowposition-20,line-rowheight-5);	// label
+					speedrtbl2.drawString (speedLabel(i), lowposition-20,line-rowheight-5);	// label
 					line = line - rowheight;
 					if (i > -1)		// not to end of this group of cogs
 					{
@@ -352,10 +352,10 @@ function speedRangeTableG()
 						}
 					}
 					speedrtbl.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-					speedrtbl.drawString (cogs[i2], lowposition-20,line-rowheight-5);	// label
+					speedrtbl.drawString (speedLabel(i2), lowposition-20,line-rowheight-5);	// label
 					//
 					speedrtbl2.fillRect(lowposition,(line-(rowheight/2))+1,speedlen,rowheight-2);
-					speedrtbl2.drawString (cogs[i2], lowposition-20,line-rowheight-5);	// label
+					speedrtbl2.drawString (speedLabel(i2), lowposition-20,line-rowheight-5);	// label
 					line = line - rowheight;
 					if ( i2 > -1 )
 					{

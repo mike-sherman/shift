@@ -96,174 +96,73 @@ function writexRings()
 
 }
 
-function writeCogs()	// update the cog display
+// update the cog boxes - prefix is "cog" or "cogx", sel is the matching cassette menu
+function writeCogBoxes(prefix, sel)
 {
-   // count the cogs
-   numCogs = 0;
-   for (i=0; i < cogs.length; i++){
-      if (cogs[i] > 0 && cogs[i] < 999 ){
-         numCogs ++;
-      }
-   }
-   // sort the cogs
-   cogs.sort(compareNum);
-   document.mainForm.cog0.value=cogs[0];
-   if (cogs[1] < 999){
-      document.mainForm.cog1.value=cogs[1];
-   }else{
-      document.mainForm.cog1.value="";
-   }
-   if (cogs[2] < 999){
-      document.mainForm.cog2.value=cogs[2];
-   }else{
-      document.mainForm.cog2.value="";
-   }
-   if (cogs[3] < 999){
-      document.mainForm.cog3.value=cogs[3];
-   }else{
-      document.mainForm.cog3.value="";
-   }
-   if (cogs[4] < 999){
-      document.mainForm.cog4.value=cogs[4];
-   }else{
-      document.mainForm.cog4.value="";
-   }
-   if (cogs[5] < 999){
-      document.mainForm.cog5.value=cogs[5];
-   }else{
-      document.mainForm.cog5.value="";
-   }
-   if (cogs[6] < 999){
-      document.mainForm.cog6.value=cogs[6];
-   }else{
-      document.mainForm.cog6.value="";
-   }
-   if (cogs[7] < 999){
-      document.mainForm.cog7.value=cogs[7];
-   }else{
-      document.mainForm.cog7.value="";
-   }
-   if (cogs[8] < 999){
-      document.mainForm.cog8.value=cogs[8];
-   }else{
-      document.mainForm.cog8.value="";
-   }
-   if (cogs[9] < 999){
-      document.mainForm.cog9.value=cogs[9];
-   }else{
-      document.mainForm.cog9.value="";
-   }
-   if (cogs[10] < 999){
-      document.mainForm.cog10.value=cogs[10];
-   }else{
-      document.mainForm.cog10.value="";
-   }
-   if (cogs[11] < 999){
-      document.mainForm.cog11.value=cogs[11];
-   }else{
-      document.mainForm.cog11.value="";
-   }
-   if (cogs[12] < 999){
-      document.mainForm.cog12.value=cogs[12];
-   }else{
-      document.mainForm.cog12.value="";
-   }
+	var i;
+	if (hubActive())
+	{	// show the hub's internal ratios, top gear first
+		hubRatios.sort(compareNumDesc);
+		numCogs = hubRatios.length;
+		for (i = 0; i < 14; i++)
+		{
+			document.mainForm[prefix + i].size = 5;
+			if (i < numCogs)
+			{
+				document.mainForm[prefix + i].value = hubRatios[i].toFixed(3);
+			}
+			else
+			{
+				document.mainForm[prefix + i].value = "";
+			}
+		}
+	}
+	else
+	{
+		// count the cogs
+		numCogs = 0;
+		for (i = 0; i < cogs.length; i++)
+		{
+			if (cogs[i] > 0 && cogs[i] < 999)
+			{
+				numCogs++;
+			}
+		}
+		// sort the cogs
+		cogs.sort(compareNum);
+		for (i = 0; i < 14; i++)
+		{
+			document.mainForm[prefix + i].size = 2;
+			if (cogs[i] < 999 || i == 0)
+			{
+				document.mainForm[prefix + i].value = cogs[i];
+			}
+			else
+			{
+				document.mainForm[prefix + i].value = "";
+			}
+		}
+	}
 
 	// set the correct item in the pull down menu
-	for ( var i = 0; i < document.mainForm.cassette.options.length; i++ ) 
+	for (i = 0; i < sel.options.length; i++)
 	{
-		if ( document.mainForm.cassette.options[i].value == cassetteSelection ) 
+		if (sel.options[i].value == cassetteSelection)
 		{
-			document.mainForm.cassette.options[i].selected = true;
-		     break;
+			sel.options[i].selected = true;
+			break;
 		}
-  }
+	}
 }
 
-// for the Cassette & Rings tab
-function writexCogs()	// update the cog display
+function writeCogs()	// Cassette tab
 {
-   // count the cogs
-   numCogs = 0;
-   for (i=0; i < cogs.length; i++){
-      if (cogs[i] > 0 && cogs[i] < 999 ){
-         numCogs ++;
-      }
-   }
-   // sort the cogs
-   cogs.sort(compareNum);
-   document.mainForm.cogx0.value=cogs[0];
-   if (cogs[1] < 999){
-      document.mainForm.cogx1.value=cogs[1];
-   }else{
-      document.mainForm.cogx1.value="";
-   }
-   if (cogs[2] < 999){
-      document.mainForm.cogx2.value=cogs[2];
-   }else{
-      document.mainForm.cogx2.value="";
-   }
-   if (cogs[3] < 999){
-      document.mainForm.cogx3.value=cogs[3];
-   }else{
-      document.mainForm.cogx3.value="";
-   }
-   if (cogs[4] < 999){
-      document.mainForm.cogx4.value=cogs[4];
-   }else{
-      document.mainForm.cogx4.value="";
-   }
-   if (cogs[5] < 999){
-      document.mainForm.cogx5.value=cogs[5];
-   }else{
-      document.mainForm.cogx5.value="";
-   }
-   if (cogs[6] < 999){
-      document.mainForm.cogx6.value=cogs[6];
-   }else{
-      document.mainForm.cogx6.value="";
-   }
-   if (cogs[7] < 999){
-      document.mainForm.cogx7.value=cogs[7];
-   }else{
-      document.mainForm.cogx7.value="";
-   }
-   if (cogs[8] < 999){
-      document.mainForm.cogx8.value=cogs[8];
-   }else{
-      document.mainForm.cogx8.value="";
-   }
-   if (cogs[9] < 999){
-      document.mainForm.cogx9.value=cogs[9];
-   }else{
-      document.mainForm.cogx9.value="";
-   }
-   if (cogs[10] < 999){
-      document.mainForm.cogx10.value=cogs[10];
-   }else{
-      document.mainForm.cogx10.value="";
-   }
-   if (cogs[11] < 999){
-      document.mainForm.cogx11.value=cogs[11];
-   }else{
-      document.mainForm.cogx11.value="";
-   }
-   if (cogs[12] < 999){
-      document.mainForm.cogx12.value=cogs[12];
-   }else{
-      document.mainForm.cogx12.value="";
-   }
+	writeCogBoxes("cog", document.mainForm.cassette);
+}
 
-	// set the correct item in the pull down menu
-	for ( var i = 0; i < document.mainForm.cassettex.options.length; i++ ) 
-	{
-		if ( document.mainForm.cassettex.options[i].value == cassetteSelection ) 
-		{
-			document.mainForm.cassettex.options[i].selected = true;
-		     break;
-		}
-  }
-
+function writexCogs()	// Cassette & Rings tab
+{
+	writeCogBoxes("cogx", document.mainForm.cassettex);
 }
 
 
@@ -271,7 +170,14 @@ function writexCogs()	// update the cog display
 function updateCapacity()
 {
    gFrontCapacity = rings[numRings-1] - rings[0];
-   gRearCapacity = gFrontCapacity + cogs[numCogs-1] - cogs[0];
+   if (hubActive())
+   {	// no rear derailleur with an internal gear hub
+      gRearCapacity = "n/a";
+   }
+   else
+   {
+      gRearCapacity = gFrontCapacity + cogs[numCogs-1] - cogs[0];
+   }
 
    document.mainForm.frontcap.value = gFrontCapacity;
    document.mainForm.rearcap.value = gRearCapacity;

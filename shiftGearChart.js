@@ -11,7 +11,7 @@ function gearChartG()
 {
 	var cw = 45;	// grid cell width   -   GRID CELLS 45 wide X 20
 	var ch = 20;	// grid cell height
-	var divw = 600;	// width of our <dev>
+	var divw = 700;	// width of our <dev>
 	var leftside;	// where the left side of the table is
 	var pad = 8; 	// padding on the left of number cells ~ 1 character width
 	var cellpad;	// variable padding
@@ -94,10 +94,10 @@ function gearChartG()
 				//
 				grtbl2.setColor(textcolor);
 			}
-			grtbl.drawString (cogs[i], leftside + cw + (i * cw) + cellpad, row );
+			grtbl.drawString (cogLabel(i), leftside + cw + (i * cw) + cellpad, row );
 			grtbl.setColor(textcolor);
 			//
-			grtbl2.drawString (cogs[i], leftside + cw + (i * cw) + cellpad, row );
+			grtbl2.drawString (cogLabel(i), leftside + cw + (i * cw) + cellpad, row );
 			grtbl2.setColor(textcolor);
 		}
 	}
@@ -116,10 +116,10 @@ function gearChartG()
 				//
 				grtbl2.setColor(textcolor);
 			}
-			grtbl.drawString (cogs[i], leftside + cw + ((numCogs-1-i) * cw) + cellpad, row );
+			grtbl.drawString (cogLabel(i), leftside + cw + ((numCogs-1-i) * cw) + cellpad, row );
 			grtbl.setColor(textcolor);
 			//
-			grtbl2.drawString (cogs[i], leftside + cw + ((numCogs-1-i) * cw) + cellpad, row );
+			grtbl2.drawString (cogLabel(i), leftside + cw + ((numCogs-1-i) * cw) + cellpad, row );
 			grtbl2.setColor(textcolor);
 		}
 	}
